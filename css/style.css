@@ -332,11 +332,12 @@ button{font-family:var(--ff); cursor:pointer}
 }
 .pannen-title{font-weight:400; font-size:clamp(21px,2.6vw,30px); line-height:1.15; margin:0 0 6px}
 .pannen-sub{font-weight:300; font-size:14px; color:rgba(237,229,215,.6); margin:0 0 24px}
-.pannen-cols{column-count:2; column-gap:34px; max-height:480px; overflow:auto}
+.pannen-cols{column-count:3; column-gap:30px}
+@media (max-width:900px){ .pannen-cols{column-count:2} }
 @media (max-width:620px){ .pannen-cols{column-count:1} }
-.pannen-item{break-inside:avoid; display:flex; gap:12px; padding:9px 0; border-bottom:1px solid rgba(237,229,215,.09)}
-.pannen-item .n{font-size:15px; color:var(--pink); min-width:28px; flex:none}
-.pannen-item .t{font-weight:300; font-size:14px; line-height:1.45; color:rgba(237,229,215,.9)}
+.pannen-item{break-inside:avoid; display:flex; gap:10px; padding:7px 0; border-bottom:1px solid rgba(237,229,215,.09)}
+.pannen-item .n{font-size:13px; color:var(--pink); min-width:24px; flex:none}
+.pannen-item .t{font-weight:300; font-size:13px; line-height:1.4; color:rgba(237,229,215,.9)}
 
 /* ===== Story Freital ===== */
 .story-glow{position:absolute; width:560px; height:560px; right:-140px; top:-160px; background:radial-gradient(circle, rgba(233,32,124,.16), transparent 70%); filter:blur(30px); pointer-events:none}
