@@ -1,8 +1,8 @@
 (function(){
   'use strict';
-  // Access Key von web3forms.com (kostenlos, siehe README) — ohne diesen
-  // Key verschickt das Kontaktformular keine E-Mails.
-  var WEB3FORMS_ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
+  // Form-ID von forminit.com (DSGVO-konform, EU-Hosting) — ohne diese
+  // ID verschickt das Kontaktformular keine E-Mails.
+  var FORMINIT_FORM_ID = 'x4vivn6rbrd';
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Mobile Nav ---------- */
@@ -602,24 +602,29 @@
         return;
       }
 
+      var contactVal = contactInput.value.trim();
+      var senderProps = { firstName: nameInput.value.trim() };
+      if(contactVal.indexOf('@') !== -1){ senderProps.email = contactVal; }
+      else { senderProps.phone = contactVal; }
+
       var payload = {
-        access_key: WEB3FORMS_ACCESS_KEY,
-        subject: 'Neue Terminanfrage über immobilien-bannewitz.de',
-        from_name: 'immobilien-bannewitz.de',
-        Objektart: state.answers.art || '',
-        Ort: state.answers.ort || '',
-        'Wohn-/Grundfläche': state.answers.flaeche || '',
-        Zustand: state.answers.zustand || '',
-        Nutzung: state.answers.nutzung || '',
-        Verkaufszeitpunkt: state.answers.zeit || '',
-        Wunschtag: state.day,
-        Wunschuhrzeit: state.time,
-        Name: nameInput.value.trim(),
-        'Telefon/E-Mail': contactInput.value.trim(),
-        source: sourceLabel
+        blocks: [
+          { type: 'sender', properties: senderProps },
+          { type: 'text', name: 'Anfrage-Typ', value: 'Terminanfrage über immobilien-bannewitz.de' },
+          { type: 'text', name: 'Objektart', value: state.answers.art || '' },
+          { type: 'text', name: 'Ort', value: state.answers.ort || '' },
+          { type: 'text', name: 'Wohn_Grundflaeche', value: state.answers.flaeche || '' },
+          { type: 'text', name: 'Zustand', value: state.answers.zustand || '' },
+          { type: 'text', name: 'Nutzung', value: state.answers.nutzung || '' },
+          { type: 'text', name: 'Verkaufszeitpunkt', value: state.answers.zeit || '' },
+          { type: 'text', name: 'Wunschtag', value: state.day },
+          { type: 'text', name: 'Wunschuhrzeit', value: state.time },
+          { type: 'text', name: 'Telefon_EMail', value: contactVal },
+          { type: 'text', name: 'Quelle', value: sourceLabel }
+        ]
       };
 
-      fetch('https://api.web3forms.com/submit', {
+      fetch('https://forminit.com/f/' + FORMINIT_FORM_ID, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
