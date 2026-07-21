@@ -417,6 +417,7 @@ button{font-family:var(--ff); cursor:pointer}
 .kf-opt{border:1px solid rgba(23,20,15,.18); background:var(--cream-2); border-radius:3px; padding:16px 20px; font-family:var(--ff); font-weight:400; font-size:16px; color:var(--ink); cursor:pointer; transition:all .18s ease; text-align:left}
 .kf-opt:hover{border-color:var(--pink-deep); background:#fff; transform:translateX(3px)}
 .kf-free-row{display:flex; gap:10px; margin-top:12px}
+.kf-free-row[hidden]{display:none}
 .kf-free-input{flex:1; min-width:0; border:1px solid rgba(23,20,15,.2); background:#fff; border-radius:3px; padding:15px 18px; font-family:var(--ff); font-weight:400; font-size:16px; color:var(--ink)}
 .kf-free-submit{all:unset; box-sizing:border-box; flex:none; display:flex; align-items:center; justify-content:center; border:1px solid var(--pink-deep); background:var(--pink-deep); color:#fff; border-radius:3px; padding:0 22px; cursor:pointer}
 .kf-free-submit:hover{background:var(--pink)}
