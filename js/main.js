@@ -309,13 +309,22 @@
     var qQuestion = document.getElementById('quizQuestion');
     var qOpts = document.getElementById('quizOpts');
 
+    function shuffled(arr){
+      var a = arr.slice();
+      for(var i = a.length - 1; i > 0; i--){
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+      }
+      return a;
+    }
+
     function renderQuizQuestion(){
       var q = quizData[quizState.index];
       qProgLabel.textContent = 'Frage ' + (quizState.index + 1) + ' / ' + quizData.length;
       qProgFill.style.width = (quizState.index / quizData.length * 100) + '%';
       qQuestion.textContent = q.q;
       qOpts.innerHTML = '';
-      q.opts.forEach(function(o){
+      shuffled(q.opts).forEach(function(o){
         var btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'q-opt';
