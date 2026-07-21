@@ -377,8 +377,8 @@ button{font-family:var(--ff); cursor:pointer}
 .steps-scroll .arr{color:#b0a494; flex:none}
 
 /* ===== Diskretion + Mieter ===== */
-.diskretion-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,5vw,64px)}
-@media (max-width:820px){ .diskretion-grid{grid-template-columns:1fr} }
+.diskretion-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(30px,5vw,64px)}
+@media (max-width:820px){ .diskretion-grid{grid-template-columns:minmax(0,1fr)} }
 .diskretion-card{background:var(--ink); color:var(--cream); border-radius:3px; padding:clamp(34px,4vw,52px); position:relative; overflow:hidden}
 .mieter-col{padding-top:clamp(34px,4vw,52px)}
 @media (max-width:820px){ .mieter-col{padding-top:0} }
