@@ -429,16 +429,6 @@
     }
     track.addEventListener('scroll', updThumb, {passive:true});
     updThumb();
-
-    function scrollAb(dir){
-      var card = track.querySelector('.step');
-      var step = card ? card.getBoundingClientRect().width + 22 : 340;
-      track.scrollBy({ left: dir * step, behavior: 'smooth' });
-    }
-    var abPrev = document.getElementById('abPrev');
-    var abNext = document.getElementById('abNext');
-    if(abPrev) abPrev.addEventListener('click', function(){ scrollAb(-1); });
-    if(abNext) abNext.addEventListener('click', function(){ scrollAb(1); });
   }
 
   /* ---------- Hero video: force muted (Autoplay-Policy) ---------- */

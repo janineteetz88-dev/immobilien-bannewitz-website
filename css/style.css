@@ -360,8 +360,6 @@ button{font-family:var(--ff); cursor:pointer}
 .swipe-hint{display:inline-flex; align-items:center; gap:10px; font-weight:600; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--pink-deep); border:1.5px solid var(--pink-deep); border-radius:999px; padding:10px 20px}
 @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
 .swipe-hint svg{animation:nudge 1.4s ease-in-out infinite}
-.ab-arrow{width:48px; height:48px; border-radius:50%; border:1px solid rgba(23,20,15,.22); background:rgba(253,251,247,.9); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .25s ease; color:var(--ink)}
-.ab-arrow:hover{background:var(--pink-deep); border-color:var(--pink-deep); color:#fff}
 .steps-wrap{position:relative}
 .steps-wrap::after{content:""; position:absolute; top:0; right:0; width:70px; height:100%; background:linear-gradient(90deg,transparent,var(--cream)); pointer-events:none}
 .steps-track{display:flex; gap:22px; overflow-x:auto; scroll-snap-type:x mandatory; padding:8px 2px 30px; scrollbar-width:none; scroll-behavior:smooth; cursor:grab}
