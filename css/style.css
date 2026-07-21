@@ -114,8 +114,9 @@ button{font-family:var(--ff); cursor:pointer}
   background:rgba(237,229,215,.95); box-shadow:0 1px 0 rgba(23,20,15,.1);
   padding:10px clamp(20px,4vw,64px); backdrop-filter:blur(8px);
 }
-.nav-brand{font-family:var(--ff); font-weight:400; font-size:19px; letter-spacing:.3px; color:#fff; transition:color .5s ease}
+.nav-brand{display:flex; flex-direction:column; gap:1px; font-family:var(--ff); font-weight:400; font-size:19px; line-height:1.15; letter-spacing:.3px; color:#fff; transition:color .5s ease}
 .site-nav.solid .nav-brand{color:var(--ink)}
+.nav-brand-sub{font-size:10px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:inherit; opacity:.7}
 .nav-links{display:flex; align-items:center; gap:clamp(16px,2vw,34px); font-size:13px; letter-spacing:1.5px; text-transform:uppercase; list-style:none; margin:0; padding:0}
 .nav-links a{color:#fff; transition:color .5s ease, opacity .3s ease}
 .nav-links a:hover{opacity:.62}
