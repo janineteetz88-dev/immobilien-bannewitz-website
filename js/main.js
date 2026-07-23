@@ -133,10 +133,9 @@
     }, {passive:true});
   }
 
-  /* ---------- Fragen-Akkordeon ---------- */
-  var fragenGrid = document.getElementById('fragenGrid');
-  if(fragenGrid){
-    var frageCards = Array.prototype.slice.call(fragenGrid.querySelectorAll('.frage-card'));
+  /* ---------- Fragen-Akkordeon (wiederverwendbar für jeden [data-accordion]-Container) ---------- */
+  document.querySelectorAll('[data-accordion]').forEach(function(grid){
+    var frageCards = Array.prototype.slice.call(grid.querySelectorAll('.frage-card'));
     frageCards.forEach(function(card){
       var head = card.querySelector('.frage-head');
       head.addEventListener('click', function(){
@@ -151,7 +150,7 @@
         }
       });
     });
-  }
+  });
 
   /* ---------- Quiz / Selbsttest ---------- */
   var quizData = [
