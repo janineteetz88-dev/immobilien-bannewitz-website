@@ -396,7 +396,7 @@ button{font-family:var(--ff); cursor:pointer}
 
 /* ===== Kontakt (1 & 2) ===== */
 .kontakt-section{position:relative; overflow:hidden; padding:clamp(60px,10vh,124px) clamp(24px,5vw,80px); background:var(--ink-2); color:var(--cream); text-align:center}
-.kontakt-bg{background-image:url('https://static.wixstatic.com/media/11062b_8b94cdd630854b549c32af1e84e89755~mv2.jpg'); animation:kb 30s ease-in-out infinite alternate; filter:brightness(.4) saturate(.94) sepia(.2)}
+.kontakt-bg{background-image:url('../assets/images/kontakt-bg.jpg'); animation:kb 30s ease-in-out infinite alternate; filter:brightness(.4) saturate(.94) sepia(.2)}
 .kontakt-scrim{position:absolute; inset:0; background:linear-gradient(180deg, rgba(12,11,10,.7), rgba(12,11,10,.55) 50%, rgba(12,11,10,.8))}
 .kontakt-inner{position:relative; z-index:2; max-width:940px; margin:0 auto; padding:0}
 .kontakt-h2{font-weight:400; font-size:clamp(28px,5vw,60px); line-height:1; letter-spacing:-1px; margin:0 0 24px}
