@@ -497,8 +497,8 @@ button{font-family:var(--ff); cursor:pointer}
 
 /* ===== Blog ===== */
 .blog-top{display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-bottom:clamp(30px,4.5vh,44px)}
-.blog-all-link{display:inline-block; font-weight:500; font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:5px}
-.blog-all-link:hover{color:var(--pink-deep); border-color:var(--pink-deep)}
+.blog-all-link{display:inline-flex; align-items:center; gap:10px; font-weight:600; font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--pink-deep); border:1.5px solid var(--pink-deep); border-radius:999px; padding:13px 28px; transition:all .3s ease}
+.blog-all-link:hover{background:var(--pink-deep); color:#fff; transform:translateY(-2px)}
 .blog-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px}
 .blog-card{border-radius:var(--radius); overflow:hidden; background:var(--cream-2); display:block; color:inherit}
 .blog-media{position:relative; height:170px}
