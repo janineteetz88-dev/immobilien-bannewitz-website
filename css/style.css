@@ -631,3 +631,9 @@ button{font-family:var(--ff); cursor:pointer}
 .blog-index-grid .blog-meta{margin-bottom:8px; font-size:11px}
 .blog-index-grid .blog-title{font-size:16.5px; line-height:1.3; margin:0 0 8px}
 .blog-index-grid .blog-excerpt{font-size:13px; line-height:1.55; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.blog-index-grid .blog-card-extra{display:none}
+.blog-index-grid.is-expanded .blog-card-extra{display:block}
+.blog-category-more{display:flex; align-items:center; gap:8px; width:fit-content; margin:18px auto 0; font-weight:600; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted-2); background:none; border:none; cursor:pointer; padding:6px 2px; font-family:var(--ff)}
+.blog-category-more:hover{color:var(--pink-deep)}
+.blog-category-more svg{transition:transform .25s ease}
+.blog-category-more[aria-expanded="true"] svg{transform:rotate(180deg)}

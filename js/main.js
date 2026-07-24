@@ -664,3 +664,15 @@
 
   document.querySelectorAll('[data-kf]').forEach(function(root){ initKontaktForm(root); });
 })();
+
+(function(){
+  document.querySelectorAll('.blog-category-more').forEach(function(btn){
+    var grid = btn.previousElementSibling;
+    var label = btn.querySelector('.label');
+    btn.addEventListener('click', function(){
+      var expanded = grid.classList.toggle('is-expanded');
+      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      label.textContent = expanded ? btn.dataset.less : btn.dataset.more;
+    });
+  });
+})();
