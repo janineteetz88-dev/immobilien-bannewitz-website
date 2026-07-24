@@ -14,7 +14,7 @@ Redaktioneller Leitfaden für alle Ratgeber-Artikel im Blog. Stand: 24.07.2026.
 
 ## Wording & Storytelling
 
-- **Mindestens 800 Wörter** pro Artikel.
+- **Mindestens 800 Wörter, im Schnitt eher 1.000–1.500+** – je nachdem, wie viel das Thema hergibt. 800 ist die Untergrenze, kein Zielwert. Länge soll sich natürlich aus dem Thema ergeben, nicht an der Grenze kleben – lieber ein Thema gründlich zu Ende erzählen, als bei 800 abzubrechen.
 - **Absatzlängen variieren bewusst** – nicht jeder Absatz gleich lang. Kurze Ein-Satz-Absätze für Betonung, längere für Erklärungen. Uniform lange Absätze wirken maschinell und werden vermieden.
 - **Mit Beispielen arbeiten**: mindestens ein konkretes (ggf. anonymisiertes) Beispiel oder eine kleine Geschichte aus der Praxis pro Artikel, die den abstrakten Punkt greifbar macht.
 - **Leicht verständlich für Eigentümer*innen**: keine unerklärten Fachbegriffe, keine tiefgründige juristische/fachliche Detailtiefe, die vom Kernpunkt ablenkt. Wenn ein Fachbegriff nötig ist, wird er in einem Nebensatz kurz erklärt.
