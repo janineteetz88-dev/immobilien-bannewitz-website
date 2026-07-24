@@ -485,7 +485,8 @@
     var freeInput = root.querySelector('[data-kf-free-input]');
     var freeSubmit = root.querySelector('[data-kf-free-submit]');
     var nameInput = root.querySelector('[data-kf-name]');
-    var contactInput = root.querySelector('[data-kf-contact]');
+    var phoneInput = root.querySelector('[data-kf-phone]');
+    var emailInput = root.querySelector('[data-kf-email]');
     var dayListEl = root.querySelector('[data-kf-day-list]');
     var timeListEl = root.querySelector('[data-kf-time-list]');
     var submitBtn = root.querySelector('[data-kf-submit]');
@@ -570,14 +571,17 @@
     }
 
     function validate(){
-      var ok = !!(state.day && state.time && nameInput.value.trim() && contactInput.value.trim());
+      var emailVal = emailInput.value.trim();
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+      var ok = !!(state.day && state.time && nameInput.value.trim() && phoneInput.value.trim() && emailOk);
       submitBtn.disabled = !ok;
     }
 
     function reset(){
       state = { step: 0, answers: {}, day: '', time: '' };
       nameInput.value = '';
-      contactInput.value = '';
+      phoneInput.value = '';
+      emailInput.value = '';
       if(errorEl) errorEl.hidden = true;
       bookedEl.hidden = true;
       bookingEl.hidden = true;
@@ -600,10 +604,9 @@
         return;
       }
 
-      var contactVal = contactInput.value.trim();
-      var senderProps = { firstName: nameInput.value.trim() };
-      if(contactVal.indexOf('@') !== -1){ senderProps.email = contactVal; }
-      else { senderProps.phone = contactVal; }
+      var phoneVal = phoneInput.value.trim();
+      var emailVal = emailInput.value.trim();
+      var senderProps = { firstName: nameInput.value.trim(), phone: phoneVal, email: emailVal };
 
       var payload = {
         blocks: [
@@ -617,7 +620,8 @@
           { type: 'text', name: 'Verkaufszeitpunkt', value: state.answers.zeit || '' },
           { type: 'text', name: 'Wunschtag', value: state.day },
           { type: 'text', name: 'Wunschuhrzeit', value: state.time },
-          { type: 'text', name: 'Telefon_EMail', value: contactVal },
+          { type: 'text', name: 'Telefon', value: phoneVal },
+          { type: 'text', name: 'E_Mail', value: emailVal },
           { type: 'text', name: 'Quelle', value: sourceLabel }
         ]
       };
@@ -650,7 +654,8 @@
       if(e.key === 'Enter'){ e.preventDefault(); freeSubmit.click(); }
     });
     nameInput.addEventListener('input', validate);
-    contactInput.addEventListener('input', validate);
+    phoneInput.addEventListener('input', validate);
+    emailInput.addEventListener('input', validate);
     submitBtn.addEventListener('click', submitBooking);
     resetBtn.addEventListener('click', reset);
 
