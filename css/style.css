@@ -582,6 +582,18 @@ button{font-family:var(--ff); cursor:pointer}
 .blog-article-cta p{color:rgba(237,229,215,.8); margin:0 0 20px}
 .blog-article-related{font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--muted-2); margin-top:50px; padding-top:24px; border-top:1px solid var(--line-soft)}
 .blog-article-related a{display:block; margin-top:10px; font-size:16px; text-transform:none; letter-spacing:0}
+.blog-summary-box{background:var(--cream-2); border-left:3px solid var(--pink-deep); border-radius:0 var(--radius) var(--radius) 0; padding:22px 26px; margin:32px 0}
+.blog-summary-box p.label{margin:0 0 10px; font-weight:600; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted-2)}
+.blog-summary-box ul{margin:0; padding-left:20px; font-weight:300; font-size:16px; line-height:1.65; color:var(--ink)}
+.blog-summary-box li{margin-bottom:6px}
+.blog-toc{background:var(--cream-2); border-radius:var(--radius); padding:20px 26px; margin:28px 0}
+.blog-toc p.label{margin:0 0 12px; font-weight:600; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted-2)}
+.blog-toc ol{margin:0; padding-left:20px; font-size:15px; line-height:1.9; color:var(--ink)}
+.blog-toc a{color:var(--ink); text-decoration:none; border-bottom:1px solid transparent}
+.blog-toc a:hover{border-bottom-color:var(--pink-deep)}
+.blog-article-sources{margin-top:36px; padding-top:20px; border-top:1px solid var(--line-soft); font-size:13px; line-height:1.7; color:var(--muted-3)}
+.blog-article-sources p.label{margin:0 0 8px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--muted-2); font-size:12px}
+.blog-article-sources a{color:var(--muted-3); text-decoration:underline}
 
 /* ===== Blog-Übersicht ===== */
 .blog-index-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px}
