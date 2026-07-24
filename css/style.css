@@ -491,10 +491,6 @@ button{font-family:var(--ff); cursor:pointer}
   .netzwerk-org{grid-column:1 / -1; text-align:left; align-self:start}
   .netzwerk-detail{padding:4px 16px 28px}
 }
-.netzwerk-teaser-row{display:flex; flex-wrap:wrap; gap:12px 32px; padding-top:22px; border-top:1px solid rgba(23,20,15,.16)}
-.netzwerk-teaser-name{font-weight:400; font-size:18px; color:var(--ink)}
-.netzwerk-teaser-name::before{content:"—"; color:var(--pink-deep); margin-right:10px}
-
 /* ===== Netzwerk-Orbit ===== */
 .netzwerk-orbit{display:flex; align-items:center; justify-content:center; margin:clamp(44px,7vh,68px) 0 clamp(28px,4vh,36px); flex-wrap:wrap; row-gap:20px}
 .netzwerk-orbit-circle{
