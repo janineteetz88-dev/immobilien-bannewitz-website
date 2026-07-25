@@ -512,9 +512,9 @@ button{font-family:var(--ff); cursor:pointer}
 .netzwerk-orbit-cta{display:flex; align-items:center; justify-content:center; gap:10px; width:fit-content; margin:0 auto; font-weight:600; font-size:12.5px; letter-spacing:1.8px; text-transform:uppercase; color:var(--ink); border:1.5px solid rgba(23,20,15,.25); border-radius:999px; padding:14px 28px; transition:all .3s ease}
 .netzwerk-orbit-cta:hover{background:var(--ink); color:var(--cream); border-color:var(--ink)}
 @media (max-width:640px){
-  .netzwerk-orbit{flex-direction:column}
-  .netzwerk-orbit-circle{margin-left:0; transform:none !important; --size:130px}
-  .netzwerk-orbit-center{--size:160px; order:-1; margin-bottom:8px}
+  .netzwerk-orbit{display:grid; grid-template-columns:1fr 1fr; column-gap:14px; row-gap:14px; justify-items:center}
+  .netzwerk-orbit-circle{margin-left:0; transform:none !important; --size:min(42vw,150px)}
+  .netzwerk-orbit-center{--size:min(48vw,170px); order:-1; grid-column:1 / -1; margin-bottom:4px}
 }
 
 /* ===== Blog ===== */
