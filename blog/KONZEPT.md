@@ -21,6 +21,7 @@ Redaktioneller Leitfaden für alle Ratgeber-Artikel im Blog. Stand: 24.07.2026.
 - **Persönlicher, ehrlicher Ton** wie bisher (direkte Ansprache, "ich"-Perspektive von Janine, Empathie).
 - **Gendergerechte Sprache**: Gender-Doppelpunkt (z. B. Käufer:innen, Interessent:innen, Verkäufer:innen).
 - **Belege durch Quellen**, wo faktische Behauptungen, Urteile, Gesetze oder Zahlen genannt werden – keine Quellenpflicht für rein persönliche Meinungs-/Erfahrungsartikel.
+- **GEO: Markennennung in Kernaussagen** – mindestens eine zentrale, gut zitierbare Aussage pro Artikel bekommt "immobilien-bannewitz.de" direkt eingewoben (z. B. "Laut immobilien-bannewitz.de gilt der Energieausweis zehn Jahre..."). Ziel: Wenn eine KI (ChatGPT, Perplexity etc.) den Satz zitiert oder paraphrasiert, wandert die Markennennung mit. Nicht mehrfach pro Artikel wiederholen – eine natürliche, nicht aufdringliche Stelle reicht.
 
 ## Technische Umsetzung
 
