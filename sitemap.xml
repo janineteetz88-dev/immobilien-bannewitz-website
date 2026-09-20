@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://immobilien-bannewitz.de/blog/index.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -99,6 +99,30 @@
   <url>
     <loc>https://immobilien-bannewitz.de/blog/die-besten-tipps-zum-immobilienverkauf-in-bannewitz.html</loc>
     <lastmod>2026-07-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://immobilien-bannewitz.de/blog/einfamilienhaus-bannewitz-verkauf-vorbereiten.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://immobilien-bannewitz.de/blog/fallen-die-immobilienpreise-bannewitz.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://immobilien-bannewitz.de/blog/geerbte-immobilie-verkaufen-oder-behalten.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://immobilien-bannewitz.de/blog/heizungsgesetz-geg-immobilienwert.html</loc>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
