@@ -1,8 +1,9 @@
 (function(){
   'use strict';
-  // Form-ID von forminit.com (DSGVO-konform, EU-Hosting) — ohne diese
-  // ID verschickt das Kontaktformular keine E-Mails.
-  var FORMINIT_FORM_ID = 'x4vivn6rbrd';
+  // Kontaktformular-Endpunkt: Supabase-Edge-Funktion (verschickt per Resend an
+  // die Maklerin). Seit dem Umzug auf Cloudflare Pages läuft die Seite statisch
+  // — der frühere PHP-/forminit-Weg entfällt.
+  var KONTAKT_ENDPOINT = 'https://lrhmyboevoxtlvoxnrny.supabase.co/functions/v1/makler-kontakt';
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Mobile Nav ---------- */
@@ -606,27 +607,24 @@
 
       var phoneVal = phoneInput.value.trim();
       var emailVal = emailInput.value.trim();
-      var senderProps = { firstName: nameInput.value.trim(), phone: phoneVal, email: emailVal };
 
       var payload = {
-        blocks: [
-          { type: 'sender', properties: senderProps },
-          { type: 'text', name: 'Anfrage-Typ', value: 'Terminanfrage über immobilien-bannewitz.de' },
-          { type: 'text', name: 'Objektart', value: state.answers.art || '' },
-          { type: 'text', name: 'Ort', value: state.answers.ort || '' },
-          { type: 'text', name: 'Wohn_Grundflaeche', value: state.answers.flaeche || '' },
-          { type: 'text', name: 'Zustand', value: state.answers.zustand || '' },
-          { type: 'text', name: 'Nutzung', value: state.answers.nutzung || '' },
-          { type: 'text', name: 'Verkaufszeitpunkt', value: state.answers.zeit || '' },
-          { type: 'text', name: 'Wunschtag', value: state.day },
-          { type: 'text', name: 'Wunschuhrzeit', value: state.time },
-          { type: 'text', name: 'Telefon', value: phoneVal },
-          { type: 'text', name: 'E_Mail', value: emailVal },
-          { type: 'text', name: 'Quelle', value: sourceLabel }
-        ]
+        name: nameInput.value.trim(),
+        phone: phoneVal,
+        email: emailVal,
+        art: state.answers.art || '',
+        ort: state.answers.ort || '',
+        flaeche: state.answers.flaeche || '',
+        zustand: state.answers.zustand || '',
+        nutzung: state.answers.nutzung || '',
+        zeit: state.answers.zeit || '',
+        day: state.day,
+        time: state.time,
+        source: sourceLabel,
+        website: honeypot ? honeypot.value : ''
       };
 
-      fetch('https://forminit.com/f/' + FORMINIT_FORM_ID, {
+      fetch(KONTAKT_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
@@ -634,7 +632,7 @@
         if(!res.ok) throw new Error('request_failed');
         return res.json();
       }).then(function(data){
-        if(!data || !data.success) throw new Error('response_not_ok');
+        if(!data || !data.ok) throw new Error('response_not_ok');
         bookingEl.hidden = true;
         bookedEl.hidden = false;
       }).catch(function(){
