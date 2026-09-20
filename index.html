@@ -120,7 +120,6 @@
       <li><a href="#fragen">Ihre Fragen</a></li>
       <li><a href="#ablauf">Ablauf</a></li>
       <li><a href="#quiz">Selbsttest</a></li>
-      <li><a href="#objekte">Objekte</a></li>
       <li><a href="netzwerk.html">Netzwerk</a></li>
       <li><a href="ueber-mich.html">Über mich</a></li>
       <li><a href="#blog">Blog</a></li>
@@ -134,7 +133,7 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero" aria-label="Einleitung">
     <div class="hero-media" id="heroMedia">
-      <video autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/video/hero-poster.jpg" aria-hidden="true">
         <source src="assets/video/hero.mp4" type="video/mp4">
       </video>
     </div>
@@ -203,7 +202,7 @@
       </div>
       <div class="rv media ueber-media" id="ueberMedia">
         <div class="ueber-frame"></div>
-        <img class="ueber-photo" src="assets/images/janine-portrait.jpg" alt="Janine Kreiser">
+        <picture><source srcset="assets/images/janine-portrait.webp" type="image/webp"><img class="ueber-photo" src="assets/images/janine-portrait.jpg" alt="Janine Kreiser" width="1400" height="1051" decoding="async" loading="lazy"></picture>
       </div>
       <div class="ueber-tabs-block">
         <div class="rv" role="tablist" aria-label="Perspektive wählen" style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;" id="ueberTabs">
@@ -376,33 +375,33 @@
       <div class="steps-wrap">
         <div class="steps-track" id="stepsTrack">
           <div class="rv step">
-            <div class="step-circle"><div class="z" style="background-image:url('assets/images/step-01.jpg')"></div><span class="step-num">01</span></div>
+            <div class="step-circle"><div class="z" style="background-image:url('assets/images/step-01.webp')"></div><span class="step-num">01</span></div>
             <h3>Erstkontakt</h3>
             <p>Am Anfang stehen ein paar Fragen für den groben Überblick – unverbindlich und in Ruhe. Sie schildern mir Ihre Situation, ich höre zu und ordne ein, was gerade überhaupt sinnvoll ist.</p>
           </div>
           <div class="rv step">
-            <div class="step-circle"><div class="z" style="background-image:url('assets/images/objekt-eigentumswohnung.jpg')"></div><span class="step-num">02</span></div>
+            <div class="step-circle"><div class="z" style="background-image:url('assets/images/objekt-eigentumswohnung.webp')"></div><span class="step-num">02</span></div>
             <h3>Bewertung &amp; Begehung</h3>
             <p>Wirklich belastbar wird es bei der Vor-Ort-Begehung – der ungeschönte Blick zählt. Mietverhältnis, Anzahl der Parteien und bisherige Maßnahmen beeinflussen den Wert enorm; daraus entsteht eine fundierte Preisermittlung und die passende Zielgruppe.</p>
           </div>
           <div class="rv step">
-            <div class="step-circle"><div class="z" style="background-image:url('assets/images/objekt-einfamilienhaus.jpg')"></div><span class="step-num">03</span></div>
+            <div class="step-circle"><div class="z" style="background-image:url('assets/images/objekt-einfamilienhaus.webp')"></div><span class="step-num">03</span></div>
             <h3>Aufbereitung &amp; Exposé</h3>
             <p>Ich bereite die Immobilie professionell vor – mit Empfehlungen zur Optimierung des Erscheinungsbildes und hochwertigen Fotos. Ich erstelle ein ausführliches, aussagekräftiges Exposé mit hohem Informationsfluss.</p>
           </div>
           <div class="rv step">
-            <div class="step-circle"><div class="z" style="background-image:url('assets/images/statement-zitat.jpg')"></div><span class="step-num">04</span></div>
+            <div class="step-circle"><div class="z" style="background-image:url('assets/images/statement-zitat.webp')"></div><span class="step-num">04</span></div>
             <h3>Vermarktung &amp; Besichtigungen</h3>
             <p>Ihre Immobilie wird zielgerichtet beworben – online und offline. Ich führe die Besichtigungen durch, stehe im Austausch mit Interessenten und prüfe, wer es ernst meint.</p>
           </div>
           <div class="rv step">
             <!-- Foto: Unsplash (photo-1775492783040-9ebacb1f7861), Unsplash-Lizenz, keine Zuschreibung nötig. -->
-            <div class="step-circle"><div class="z" style="background-image:url('assets/images/step-notar.jpg')"></div><span class="step-num">05</span></div>
+            <div class="step-circle"><div class="z" style="background-image:url('assets/images/step-notar.webp')"></div><span class="step-num">05</span></div>
             <h3>Verhandlung &amp; Notar</h3>
             <p>Ich verhandle sachlich und fair bis zur Kaufzusage, übernehme die gesamte Kommunikation und begleite rechtliche Fragen – oder vertrete Sie beim Notartermin, falls Sie nicht in der Nähe wohnen.</p>
           </div>
           <div class="rv step">
-            <div class="step-circle"><div class="z" style="background-image:url('assets/images/step-06.jpg')"></div><span class="step-num">06</span></div>
+            <div class="step-circle"><div class="z" style="background-image:url('assets/images/step-06.webp')"></div><span class="step-num">06</span></div>
             <h3>Übergabe</h3>
             <p>Nach gezahltem Kaufpreis vereinbare ich mit den Käufern die Übergabe, sofern die Immobilie selbst genutzt wird. Ich lese die Zählerstände ab, übergebe ordnungsgemäß die Schlüssel und führe auf Wunsch die Kommunikation zum Eigentümerwechsel mit der Hausverwaltung.</p>
           </div>
@@ -496,34 +495,10 @@
     </div>
   </section>
 
-  <!-- ============ OBJEKTARTEN ============ -->
-  <section id="objekte" aria-labelledby="objekte-h2" style="padding:clamp(52px,8vh,96px) clamp(24px,5vw,80px); background:var(--cream);">
-    <div class="wrap" style="max-width:1240px; padding:0;">
-      <div style="margin-bottom:clamp(30px,4.5vh,46px);">
-        <p class="rv eyebrow"><span class="dot"></span>Immobilienangebote</p>
-        <h2 id="objekte-h2" class="rv" style="font-size:clamp(26px,3.8vw,46px); line-height:1.02; letter-spacing:-.5px; margin:0 0 18px;">Drei Objektarten, drei Strategien.</h2>
-        <p class="rv" style="max-width:46ch; font-weight:300; font-size:17px; line-height:1.7; color:var(--muted); margin:0;">Ob Kapitalanleger mit Blick auf die Rendite oder Familie auf der Suche nach einem Zuhause – ich spreche die richtige Zielgruppe an und entwickle eine passgenaue Verkaufsstrategie.</p>
-      </div>
-      <div class="objekte-grid">
-        <a href="#kontakt-1" class="rv media objekt-card">
-          <div class="objekt-media"><img class="z" src="assets/images/objekt-einfamilienhaus.jpg" alt="Einfamilienhaus"><div class="objekt-scrim"></div><span class="objekt-tag">Zuhause</span><h3 class="objekt-title">Einfamilienhäuser</h3></div>
-          <div class="objekt-body"><p>Ein Einfamilienhaus ist mehr als eine Immobilie – ein Zuhause voller Erinnerungen. Ich begleite Sie mit Feingefühl und sorge dafür, dass Ihr Haus den passenden Käufer findet.</p></div>
-        </a>
-        <a href="#kontakt-1" class="rv media objekt-card">
-          <div class="objekt-media"><img class="z" src="assets/images/objekt-eigentumswohnung.jpg" alt="Eigentumswohnung"><div class="objekt-scrim"></div><span class="objekt-tag">Kapitalanlage</span><h3 class="objekt-title">Eigentumswohnungen</h3></div>
-          <div class="objekt-body"><p>Ob selbst genutzt oder vermietet – hier zählen klare Strukturen, transparente Unterlagen und ein gutes Gespür für die Zielgruppe. Ich kümmere mich um eine marktgerechte Einwertung und einen zügigen Verkauf.</p></div>
-        </a>
-        <a href="#kontakt-1" class="rv media objekt-card">
-          <div class="objekt-media"><img class="z" src="assets/images/objekt-mehrfamilienhaus.jpg" alt="Mehrfamilienhaus"><div class="objekt-scrim"></div><span class="objekt-tag">Investment</span><h3 class="objekt-title">Mehrfamilienhäuser</h3></div>
-          <div class="objekt-body"><p>Manche Immobilien erfordern besondere Zurückhaltung. Diskret verkaufen liegt mir: Ich spreche gezielt geprüfte Investoren aus meinem Netzwerk an – professionell, vertraulich und zuverlässig.</p></div>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- ============ STATEMENT ============ -->
   <section aria-label="Zitat" class="statement-section">
-    <img class="z statement-img" src="assets/images/statement-zitat.jpg" alt="">
+    <picture><source srcset="assets/images/statement-zitat.webp" type="image/webp"><img class="z statement-img" src="assets/images/statement-zitat.jpg" alt="" width="1344" height="768" decoding="async" loading="lazy"></picture>
     <div class="statement-scrim" aria-hidden="true"></div>
     <div class="rv statement-inner">
       <blockquote class="statement-quote">„Ihr Zuhause verdient den besten Käufer — und den finde ich."</blockquote>
@@ -573,7 +548,7 @@
       </div>
       <div class="blog-grid">
         <a href="blog/energieausweis-hausverkauf.html" class="rv media blog-card">
-          <div class="blog-media"><img class="z" src="assets/images/blog-energieausweis.jpg" alt=""></div>
+          <div class="blog-media"><picture><source srcset="assets/images/blog-energieausweis.webp" type="image/webp"><img class="z" src="assets/images/blog-energieausweis.jpg" alt="" width="1400" height="933" decoding="async" loading="lazy"></picture></div>
           <div class="blog-body">
             <div class="blog-meta">8. Juni · 2 Min.</div>
             <h3 class="blog-title">Energieausweis beim Hausverkauf: Pflicht, Arten &amp; Kosten</h3>
@@ -581,7 +556,7 @@
           </div>
         </a>
         <a href="blog/was-kostet-immobiliengutachten.html" class="rv media blog-card">
-          <div class="blog-media"><img class="z" src="assets/images/blog-immobiliengutachten.jpg" alt="Stapel Gutachten-Unterlagen auf einem Wohnzimmertisch – Symbolbild für die Kosten eines Immobiliengutachtens"></div>
+          <div class="blog-media"><picture><source srcset="assets/images/blog-immobiliengutachten.webp" type="image/webp"><img class="z" src="assets/images/blog-immobiliengutachten.jpg" alt="Stapel Gutachten-Unterlagen auf einem Wohnzimmertisch – Symbolbild für die Kosten eines Immobiliengutachtens" width="1600" height="1106" decoding="async" loading="lazy"></picture></div>
           <div class="blog-body">
             <div class="blog-meta">8. Juni · 2 Min.</div>
             <h3 class="blog-title">Was kostet ein Immobiliengutachten? Preise &amp; Unterschiede</h3>
@@ -589,7 +564,7 @@
           </div>
         </a>
         <a href="blog/bewertungsverfahren-immobilie-einfach-erklaert.html" class="rv media blog-card">
-          <div class="blog-media"><img class="z" src="assets/images/blog-sachwert-card.jpg" alt=""></div>
+          <div class="blog-media"><picture><source srcset="assets/images/blog-sachwert-card.webp" type="image/webp"><img class="z" src="assets/images/blog-sachwert-card.jpg" alt="" width="900" height="600" decoding="async" loading="lazy"></picture></div>
           <div class="blog-body">
             <div class="blog-meta">8. Juni · 2 Min.</div>
             <h3 class="blog-title">Sachwert-, Ertragswert- &amp; Vergleichswertverfahren erklärt</h3>
