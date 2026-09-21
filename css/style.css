@@ -620,6 +620,12 @@ button{font-family:var(--ff); cursor:pointer}
 .blog-toc ol{margin:0; padding-left:20px; font-size:15px; line-height:1.9; color:var(--ink)}
 .blog-toc a{color:var(--ink); text-decoration:none; border-bottom:1px solid transparent}
 .blog-toc a:hover{border-bottom-color:var(--pink-deep)}
+/* Breadcrumbs */
+.breadcrumb{display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-size:13px; color:var(--muted-2); margin:0 0 20px; line-height:1.4}
+.breadcrumb a{color:var(--muted-2); text-decoration:none; border-bottom:1px solid transparent; transition:color .2s ease, border-color .2s ease}
+.breadcrumb a:hover{color:var(--pink-deep); border-bottom-color:var(--pink-deep)}
+.breadcrumb .sep{opacity:.55; user-select:none}
+.breadcrumb [aria-current="page"]{color:var(--ink)}
 .blog-article-sources{margin-top:36px; padding-top:20px; border-top:1px solid var(--line-soft); font-size:13px; line-height:1.7; color:var(--muted-3)}
 .blog-article-sources p.label{margin:0 0 8px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--muted-2); font-size:12px}
 .blog-article-sources a{color:var(--muted-3); text-decoration:underline}
