@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260921b">
+<link rel="stylesheet" href="css/style.css?v=20260921c">
 <link rel="icon" href="assets/images/favicon.png">
 
 <script type="application/ld+json">
@@ -165,7 +165,9 @@
         <h2 id="suche-h2" class="rv suche-h2-nowrap" style="font-size:clamp(22px,3.8vw,44px); line-height:1.03; letter-spacing:-.5px; margin:0 0 18px;">Für diese Käufer suche ich gerade.</h2>
         <p class="rv" style="max-width:98ch; font-weight:300; font-size:17px; line-height:1.7; color:var(--muted); margin:0;">Vielleicht passt Ihre Immobilie zu einem davon. Ob Einfamilienhaus, Eigentumswohnung zur Kapitalanlage, Mehrfamilienhaus oder Grundstück – melden Sie sich, bevor Sie überhaupt an ein Exposé denken.</p>
       </div>
-      <div class="suche-grid">
+      <div class="suche-slider">
+      <button type="button" class="suche-nav prev" aria-label="Vorheriges Suchprofil" onclick="document.getElementById('sucheTrack').scrollBy({left:-316,behavior:'smooth'})">‹</button>
+      <div class="suche-grid" id="sucheTrack">
         <div class="rv suche-card">
           <div class="suche-card-head"><span>Suchprofil 01</span><span class="v">min 120 m²</span></div>
           <h3>Familie mit zwei Kindern</h3>
@@ -186,6 +188,8 @@
           <h3>Familie sucht Baugrundstück</h3>
           <p>Sucht ein Baugrundstück in Possendorf, um sich den Traum vom eigenen Haus zu bauen. Erschlossen bevorzugt, Zuschnitt flexibel.</p>
         </div>
+      </div>
+      <button type="button" class="suche-nav next" aria-label="Nächstes Suchprofil" onclick="document.getElementById('sucheTrack').scrollBy({left:316,behavior:'smooth'})">›</button>
       </div>
       <div class="rv" style="margin-top:clamp(20px,3vh,28px); display:flex; justify-content:center;">
         <a href="#kontakt-1" class="btn">Passt Ihre Immobilie? Unverbindlich anfragen</a>
