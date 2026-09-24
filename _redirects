@@ -1,19 +1,19 @@
 # 301-Weiterleitungen: alte /post/-URLs -> kanonische /blog/-Artikel
 # (Cloudflare Pages liest diese Datei am Deployment-Root.)
 
-/post/bewertungsverfahren-immobilie-einfach-erklaert/   /blog/bewertungsverfahren-immobilie-einfach-erklaert.html   301
-/post/bewertungsverfahren-immobilie-einfach-erklaert    /blog/bewertungsverfahren-immobilie-einfach-erklaert.html   301
-/post/die-besten-tipps-zum-immobilienverkauf-in-bannewitz/   /blog/die-besten-tipps-zum-immobilienverkauf-in-bannewitz.html   301
-/post/die-besten-tipps-zum-immobilienverkauf-in-bannewitz    /blog/die-besten-tipps-zum-immobilienverkauf-in-bannewitz.html   301
-/post/energieausweis-hausverkauf/   /blog/energieausweis-hausverkauf.html   301
-/post/energieausweis-hausverkauf    /blog/energieausweis-hausverkauf.html   301
-/post/immobilienbewertung-bannewitz/   /blog/immobilienbewertung-bannewitz.html   301
-/post/immobilienbewertung-bannewitz    /blog/immobilienbewertung-bannewitz.html   301
-/post/unsere-gemeinde-bannewitz/   /blog/unsere-gemeinde-bannewitz.html   301
-/post/unsere-gemeinde-bannewitz    /blog/unsere-gemeinde-bannewitz.html   301
-/post/warum-immobilien-in-bannewitz-eine-gute-investition-sind/   /blog/warum-immobilien-in-bannewitz-eine-gute-investition-sind.html   301
-/post/warum-immobilien-in-bannewitz-eine-gute-investition-sind    /blog/warum-immobilien-in-bannewitz-eine-gute-investition-sind.html   301
-/post/warum-maklerprovisionen-prozentual-berechnet-werden-und-warum-das-fair-ist/   /blog/warum-maklerprovisionen-prozentual-berechnet-werden-und-warum-das-fair-ist.html   301
-/post/warum-maklerprovisionen-prozentual-berechnet-werden-und-warum-das-fair-ist    /blog/warum-maklerprovisionen-prozentual-berechnet-werden-und-warum-das-fair-ist.html   301
-/post/was-kostet-immobiliengutachten/   /blog/was-kostet-immobiliengutachten.html   301
-/post/was-kostet-immobiliengutachten    /blog/was-kostet-immobiliengutachten.html   301
+/post/bewertungsverfahren-immobilie-einfach-erklaert/   /blog/bewertungsverfahren-immobilie-einfach-erklaert   301
+/post/bewertungsverfahren-immobilie-einfach-erklaert    /blog/bewertungsverfahren-immobilie-einfach-erklaert   301
+/post/die-besten-tipps-zum-immobilienverkauf-in-bannewitz/   /blog/die-besten-tipps-zum-immobilienverkauf-in-bannewitz   301
+/post/die-besten-tipps-zum-immobilienverkauf-in-bannewitz    /blog/die-besten-tipps-zum-immobilienverkauf-in-bannewitz   301
+/post/energieausweis-hausverkauf/   /blog/energieausweis-hausverkauf   301
+/post/energieausweis-hausverkauf    /blog/energieausweis-hausverkauf   301
+/post/immobilienbewertung-bannewitz/   /blog/immobilienbewertung-bannewitz   301
+/post/immobilienbewertung-bannewitz    /blog/immobilienbewertung-bannewitz   301
+/post/unsere-gemeinde-bannewitz/   /blog/unsere-gemeinde-bannewitz   301
+/post/unsere-gemeinde-bannewitz    /blog/unsere-gemeinde-bannewitz   301
+/post/warum-immobilien-in-bannewitz-eine-gute-investition-sind/   /blog/warum-immobilien-in-bannewitz-eine-gute-investition-sind   301
+/post/warum-immobilien-in-bannewitz-eine-gute-investition-sind    /blog/warum-immobilien-in-bannewitz-eine-gute-investition-sind   301
+/post/warum-maklerprovisionen-prozentual-berechnet-werden-und-warum-das-fair-ist/   /blog/warum-maklerprovisionen-prozentual-berechnet-werden-und-warum-das-fair-ist   301
+/post/warum-maklerprovisionen-prozentual-berechnet-werden-und-warum-das-fair-ist    /blog/warum-maklerprovisionen-prozentual-berechnet-werden-und-warum-das-fair-ist   301
+/post/was-kostet-immobiliengutachten/   /blog/was-kostet-immobiliengutachten   301
+/post/was-kostet-immobiliengutachten    /blog/was-kostet-immobiliengutachten   301
