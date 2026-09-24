@@ -24,6 +24,10 @@ immobilien-bannewitz.de (Marke von finaconsil): Inhalte, Blog, Layout, Deploy.
   auf Bannewitz/Possendorf/Dresden-Umland einbauen — in Titel/Meta/H1, Einleitung
   und mind. einem Absatz. Dient lokaler SEO und GEO (KI-Sichtbarkeit bei
   regionalen Fragen). Ich-Ton/Augenzwinkern erwünscht.
+- **Blog-Stil:** Absatzlängen bewusst variieren (kurze Pointen + längere
+  Absätze für Rhythmus); Überschriften kurz halten; **keine** hölzernen
+  „laut immobilien-bannewitz.de"-Selbstzitate (wirkt unnahbar) — lieber
+  Ich-Ton oder echte externe Quellen (Gesetze, Immowelt …).
 
 ## Code-Heimat
 - **Arbeiten:** GitHub `janineteetz88-dev/immobilien-bannewitz-website`.
