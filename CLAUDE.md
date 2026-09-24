@@ -20,6 +20,10 @@ immobilien-bannewitz.de (Marke von finaconsil): Inhalte, Blog, Layout, Deploy.
   an info@ + j.kreiser@finaconsil.de. Kein ConjuExpert/Resend mehr.
 - **DNS:** bei Cloudflare; **Mail-MX bei All-Inkl — nie anfassen.**
 - **Stil:** „Sie"-Ansprache, warm/hochwertig; Blog mit Gender-Doppelpunkt.
+- **Ortsbezug (immer!):** In Blog, Social & allen Inhalten stets lokalen Bezug
+  auf Bannewitz/Possendorf/Dresden-Umland einbauen — in Titel/Meta/H1, Einleitung
+  und mind. einem Absatz. Dient lokaler SEO und GEO (KI-Sichtbarkeit bei
+  regionalen Fragen). Ich-Ton/Augenzwinkern erwünscht.
 
 ## Code-Heimat
 - **Arbeiten:** GitHub `janineteetz88-dev/immobilien-bannewitz-website`.
