@@ -541,7 +541,7 @@ button{font-family:var(--ff); cursor:pointer}
 .blog-media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
 .blog-body{padding:24px 24px 28px}
 .blog-meta{font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--muted-3); margin-bottom:12px}
-.blog-title{font-weight:400; font-size:23px; line-height:1.15; margin:0 0 10px; color:var(--ink); white-space:pre-line}
+.blog-title{font-weight:400; font-size:23px; line-height:1.15; margin:0 0 10px; color:var(--ink); white-space:pre-line; overflow-wrap:break-word; word-break:break-word; hyphens:auto}
 .blog-excerpt{font-weight:300; font-size:14px; line-height:1.65; color:var(--muted); margin:0}
 
 /* ===== Vita ===== */
@@ -653,7 +653,7 @@ button{font-family:var(--ff); cursor:pointer}
 .related-media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
 .related-body{padding:12px 14px 15px}
 .related-meta{font-size:11px; color:var(--muted-3); text-transform:uppercase; letter-spacing:.05em; margin-bottom:5px}
-.related-title{font-size:14.5px; font-weight:500; line-height:1.3; margin:0; color:var(--ink)}
+.related-title{font-size:14.5px; font-weight:500; line-height:1.3; margin:0; color:var(--ink); overflow-wrap:break-word; hyphens:auto}
 .blog-article-sources{margin-top:36px; padding-top:20px; border-top:1px solid var(--line-soft); font-size:13px; line-height:1.7; color:var(--muted-3)}
 .blog-article-sources p.label{margin:0 0 8px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--muted-2); font-size:12px}
 .blog-article-sources a{color:var(--muted-3); text-decoration:underline}
