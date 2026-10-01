@@ -9,15 +9,16 @@
 
 ## Kernseiten
 - [Startseite](https://immobilien-bannewitz.de/): Leistungen, Ablauf, häufige Fragen, kostenlose Wertermittlung
-- [Über mich](https://immobilien-bannewitz.de/ueber-mich.html): Werdegang und persönlicher Ansatz von Janine Kreiser
-- [Mein Netzwerk](https://immobilien-bannewitz.de/netzwerk.html): Partner für Wertermittlung, Handwerk, Finanzierung
-- [Ohne Makler verkaufen](https://immobilien-bannewitz.de/ohne-makler.html): Einordnung, was beim Privatverkauf zu beachten ist
-- [Tippgeber werden](https://immobilien-bannewitz.de/tippgeber.html): Provisionsmodell für Empfehlungen
-- [Blog / Journal](https://immobilien-bannewitz.de/blog/index.html): Ratgeberartikel, thematisch sortiert
+- [Über mich](https://immobilien-bannewitz.de/ueber-mich): Werdegang und persönlicher Ansatz von Janine Kreiser
+- [Mein Netzwerk](https://immobilien-bannewitz.de/netzwerk): Partner für Wertermittlung, Handwerk, Finanzierung
+- [Ohne Makler verkaufen](https://immobilien-bannewitz.de/ohne-makler): Einordnung, was beim Privatverkauf zu beachten ist
+- [Tippgeber werden](https://immobilien-bannewitz.de/tippgeber): Provisionsmodell für Empfehlungen
+- [Blog / Journal](https://immobilien-bannewitz.de/blog/): Ratgeberartikel, thematisch sortiert
 
 ## Blog-Themen (Auswahl)
 - Wissensaufbau für Eigentümer: Immobilienbewertung, Bewertungsverfahren (Sachwert/Ertragswert/Vergleichswert), Energieausweis, Gutachten-Kosten, Verkaufstipps, Maklerprovision
-- Rechtliches rund um die Immobilie: Erbschaftsteuer und BFH-Rechtsprechung
+- Rechtliches rund um die Immobilie: Erbschaftsteuer und BFH-Rechtsprechung, Immobilien-Kaufvertrag (Notartermin, § 311b BGB)
+- Aktuelle Gesetzeslage: Gebäudemodernisierungsgesetz (GModG, seit 29.07.2026) als Nachfolge des Heizungsgesetzes (GEG) – was es für Verkäufer:innen und Käufer:innen bedeutet
 - Aktuelles aus der Heimat: Gemeinde Bannewitz, Immobilien als Kapitalanlage in der Region
 - Meine Meinung zu…: persönliche Einschätzungen, z. B. zum Bieterverfahren beim Hausverkauf
 
