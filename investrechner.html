@@ -150,14 +150,14 @@
         <p class="calc-sub">Werte anpassen – das Ergebnis aktualisiert sich sofort. (Beispielwerte sind voreingestellt.)</p>
         <div class="calc-grid">
           <div class="calc-inputs">
-            <div class="calc-field"><label for="kp">Kaufpreis</label><div class="calc-inwrap"><input id="kp" type="number" inputmode="decimal" value="320000"><span class="calc-suffix">€</span></div></div>
+            <div class="calc-field"><label for="kp">Kaufpreis (Beispiel: 50-m²-Wohnung)</label><div class="calc-inwrap"><input id="kp" type="number" inputmode="decimal" value="120000"><span class="calc-suffix">€</span></div></div>
             <div class="calc-field"><label for="grest">Grunderwerbsteuer (Sachsen)</label><div class="calc-inwrap"><input id="grest" type="number" inputmode="decimal" value="5.5"><span class="calc-suffix">%</span></div></div>
             <div class="calc-field"><label for="notar">Notar &amp; Grundbuch</label><div class="calc-inwrap"><input id="notar" type="number" inputmode="decimal" value="2"><span class="calc-suffix">%</span></div></div>
             <div class="calc-field"><label for="makler">Maklerprovision (Käuferanteil, inkl. MwSt.)<span class="calc-hint">0 eintragen, wenn ohne Makler</span></label><div class="calc-inwrap"><input id="makler" type="number" inputmode="decimal" value="3.57"><span class="calc-suffix">%</span></div></div>
             <p class="calc-knk-sum">Kaufnebenkosten gesamt: <strong id="o_knk">–</strong></p>
-            <div class="calc-field"><label for="miete">Kaltmiete pro Monat</label><div class="calc-inwrap"><input id="miete" type="number" inputmode="decimal" value="1200"><span class="calc-suffix">€</span></div></div>
-            <div class="calc-field"><label for="kosten">Nicht umlagefähige Kosten / Monat (Verwaltung, Rücklage, Mietausfall)</label><div class="calc-inwrap"><input id="kosten" type="number" inputmode="decimal" value="180"><span class="calc-suffix">€</span></div></div>
-            <div class="calc-field"><label for="ek">Eigenkapital</label><div class="calc-inwrap"><input id="ek" type="number" inputmode="decimal" value="100000"><span class="calc-suffix">€</span></div></div>
+            <div class="calc-field"><label for="miete">Kaltmiete pro Monat</label><div class="calc-inwrap"><input id="miete" type="number" inputmode="decimal" value="450"><span class="calc-suffix">€</span></div></div>
+            <div class="calc-field"><label for="kosten">Nicht umlagefähige Kosten / Monat (Verwaltung, Rücklage, Mietausfall)</label><div class="calc-inwrap"><input id="kosten" type="number" inputmode="decimal" value="75"><span class="calc-suffix">€</span></div></div>
+            <div class="calc-field"><label for="ek">Eigenkapital</label><div class="calc-inwrap"><input id="ek" type="number" inputmode="decimal" value="30000"><span class="calc-suffix">€</span></div></div>
             <div class="calc-field"><label for="zins">Sollzins p.&nbsp;a.</label><div class="calc-inwrap"><input id="zins" type="number" inputmode="decimal" value="3.8"><span class="calc-suffix">%</span></div></div>
             <div class="calc-field"><label for="tilg">Anfängliche Tilgung p.&nbsp;a.</label><div class="calc-inwrap"><input id="tilg" type="number" inputmode="decimal" value="1.5"><span class="calc-suffix">%</span></div></div>
             <div class="calc-field"><label for="gebaeude">Gebäudeanteil (für AfA, ohne Grundstück)</label><div class="calc-inwrap"><input id="gebaeude" type="number" inputmode="decimal" value="75"><span class="calc-suffix">%</span></div></div>
@@ -277,7 +277,7 @@
 <script>
 (function(){
   var ids=['kp','grest','notar','makler','miete','kosten','ek','zins','tilg','gebaeude','afasatz','steuer'];
-  var defaults={kp:320000,grest:5.5,notar:2,makler:3.57,miete:1200,kosten:180,ek:100000,zins:3.8,tilg:1.5,gebaeude:75,afasatz:2,steuer:42};
+  var defaults={kp:120000,grest:5.5,notar:2,makler:3.57,miete:450,kosten:75,ek:30000,zins:3.8,tilg:1.5,gebaeude:75,afasatz:2,steuer:42};
   var eur=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0});
   function num(id){var el=document.getElementById(id);if(!el)return 0;var v=parseFloat((el.value+'').replace(',','.'));return isNaN(v)?0:v;}
   function pct(n){return new Intl.NumberFormat('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1}).format(n)+' %';}
