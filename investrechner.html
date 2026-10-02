@@ -157,10 +157,6 @@
             <button type="button" class="calc-reset" id="calcReset">↺ Beispielwerte zurücksetzen</button>
           </div>
           <div class="calc-results">
-            <div class="calc-verdict v-warn" id="verdict">
-              <div class="vlabel" id="vlabel">—</div>
-              <div class="vtext" id="vtext">—</div>
-            </div>
             <div class="calc-tiles">
               <div class="calc-tile hl"><div class="tl">Nettomietrendite</div><div class="tv" id="o_netto">–</div></div>
               <div class="calc-tile hl"><div class="tl">Cashflow / Monat</div><div class="tv" id="o_cf">–</div></div>
@@ -287,12 +283,6 @@
     set('o_gesamt', eur.format(gesamt));
     set('o_rate', eur.format(rateM));
     set('o_cf', (cf>=0?'+ ':'− ')+eur.format(Math.abs(cf)));
-    var v=document.getElementById('verdict'), lbl=document.getElementById('vlabel'), txt=document.getElementById('vtext');
-    v.classList.remove('v-good','v-warn','v-bad');
-    if(kp<=0||miete<=0){v.classList.add('v-warn');lbl.textContent='Bitte Werte eingeben';txt.textContent='Tragen Sie mindestens Kaufpreis und Kaltmiete ein.';return;}
-    if(netto>=3.5 && cf>=0){v.classList.add('v-good');lbl.textContent='Rechnet sich ✅';txt.textContent='Solide Nettorendite und ein positiver Cashflow – aus den Eckdaten sieht das gut aus. Lage und Zustand trotzdem prüfen.';}
-    else if(netto>=3 && cf>=-150){v.classList.add('v-warn');lbl.textContent='Grenzwertig 🟡';txt.textContent='Kann aufgehen, hängt aber an Details: Miete, Zins und Rücklagen genau prüfen. Der negative Cashflow muss dauerhaft tragbar sein.';}
-    else{v.classList.add('v-bad');lbl.textContent='Rechnet sich (noch) nicht 🔴';txt.textContent='Mit diesen Eckdaten trägt sich das Objekt schwer. Preis, Miete oder Finanzierung müssten besser sein – oder Sie setzen bewusst auf die Wertentwicklung.';}
   }
   ids.forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('input',calc);});
   var rb=document.getElementById('calcReset');
