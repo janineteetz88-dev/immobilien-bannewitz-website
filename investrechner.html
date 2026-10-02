@@ -113,9 +113,25 @@
   .calc-tile.hl{background:linear-gradient(145deg,var(--pink-deep),var(--purple)); border-color:transparent; box-shadow:0 16px 32px -18px rgba(126,42,134,.7)}
   .calc-tile.hl .tl{color:rgba(255,255,255,.82)}
   .calc-tile.hl .tv{color:#fff}
+  .calc-tile .tv{transform-origin:left center}
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes tvBump{0%{transform:scale(1)}32%{transform:scale(1.11)}100%{transform:scale(1)}}
+    @keyframes tileGlow{0%{box-shadow:0 0 0 0 rgba(200,40,111,0)}30%{box-shadow:0 0 0 3px rgba(200,40,111,.22)}100%{box-shadow:0 0 0 0 rgba(200,40,111,0)}}
+    @keyframes tileGlowHl{0%{box-shadow:0 16px 32px -18px rgba(126,42,134,.7),0 0 0 0 rgba(255,255,255,0)}30%{box-shadow:0 16px 32px -18px rgba(126,42,134,.7),0 0 0 3px rgba(255,255,255,.55)}100%{box-shadow:0 16px 32px -18px rgba(126,42,134,.7),0 0 0 0 rgba(255,255,255,0)}}
+    .calc-tile .tv.bump{animation:tvBump .46s cubic-bezier(.34,1.56,.64,1)}
+    .calc-tile.glow{animation:tileGlow .6s ease}
+    .calc-tile.hl.glow{animation:tileGlowHl .6s ease}
+  }
   .calc-note{font-size:11px; color:var(--muted-2); margin-top:18px; line-height:1.6}
   .calc-reset{appearance:none; background:none; border:0; color:var(--pink-deep); font-family:inherit; font-size:11px; font-weight:600; letter-spacing:.8px; text-transform:uppercase; cursor:pointer; padding:10px 0 0; margin-top:4px}
   .calc-reset:hover{text-decoration:underline}
+  .calc-steps{counter-reset:step; list-style:none; padding:0; margin:22px 0 10px}
+  .calc-steps li{position:relative; padding:2px 0 0 52px; margin-bottom:22px}
+  .calc-steps li::before{counter-increment:step; content:counter(step); position:absolute; left:0; top:0; width:34px; height:34px; display:flex; align-items:center; justify-content:center; background:linear-gradient(145deg,var(--pink-deep),var(--purple)); color:#fff; font-weight:700; font-size:14px; border-radius:50%; box-shadow:0 8px 18px -10px rgba(126,42,134,.8)}
+  .calc-steps .st{font-weight:600; color:var(--ink); display:block; margin-bottom:5px; font-size:16px}
+  .calc-steps .fx{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; color:var(--pink-deep); background:var(--cream); padding:3px 9px; border-radius:var(--radius-lg); display:inline-block; margin:2px 0; overflow-wrap:break-word; max-width:100%}
+  .calc-steps .ex{display:block; font-size:13px; color:var(--muted-2); margin-top:5px; line-height:1.5}
+  .calc-steps .ex b{color:var(--ink); font-weight:600; font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
@@ -204,6 +220,77 @@
       <h2>Was das für Bannewitz heißt</h2>
       <p>In Bannewitz, Possendorf und dem Dresdner Umland liegen die Nettorenditen bei gepflegten Objekten erfahrungsgemäß im soliden, nicht spektakulären Bereich – dafür ist die Nachfrage stabil. Für Kapitalanleger:innen heißt das: nicht nur auf die Rendite-Zahl starren, sondern Lage, Zustand und Mietniveau zusammen betrachten. Wie ein realistischer Wert entsteht, lesen Sie im Beitrag <a href="blog/immobilienbewertung-bannewitz">Immobilienbewertung Bannewitz</a>.</p>
 
+      <h2>So rechnet der Rechner – Schritt für Schritt</h2>
+      <p>Damit Sie jede Zahl nachvollziehen können, hier die komplette Rechenkette – mit den Werten aus dem voreingestellten Beispiel (50-m²-Wohnung, 120.000 € Kaufpreis, 450 € Kaltmiete).</p>
+      <ol class="calc-steps">
+        <li>
+          <span class="st">Kaufnebenkosten gesamt</span>
+          <span class="fx">GrESt + Notar + Makler</span>
+          <span class="ex">5,5 % + 2,0 % + 3,57 % = <b>11,07 %</b> → auf den Kaufpreis gerechnet: 120.000 € × 11,07 % = <b>13.284 €</b>. Ohne Makler sind es 7,5 %.</span>
+        </li>
+        <li>
+          <span class="st">Gesamtinvestition</span>
+          <span class="fx">Kaufpreis + Kaufnebenkosten</span>
+          <span class="ex">120.000 € + 13.284 € = <b>133.284 €</b>. Das ist der Betrag, den Sie wirklich einsetzen – nicht nur der Kaufpreis.</span>
+        </li>
+        <li>
+          <span class="st">Jahreskaltmiete</span>
+          <span class="fx">Kaltmiete × 12</span>
+          <span class="ex">450 € × 12 = <b>5.400 €</b> pro Jahr.</span>
+        </li>
+        <li>
+          <span class="st">Bruttomietrendite</span>
+          <span class="fx">Jahreskaltmiete ÷ Kaufpreis</span>
+          <span class="ex">5.400 € ÷ 120.000 € = <b>4,5 %</b>. Die schnelle Zahl – ohne Nebenkosten und laufende Kosten.</span>
+        </li>
+        <li>
+          <span class="st">Kaufpreisfaktor</span>
+          <span class="fx">Kaufpreis ÷ Jahreskaltmiete</span>
+          <span class="ex">120.000 € ÷ 5.400 € = <b>22,2</b> Jahresmieten. Je niedriger, desto günstiger das Verhältnis.</span>
+        </li>
+        <li>
+          <span class="st">Nettomietrendite</span>
+          <span class="fx">(Jahreskaltmiete − nicht umlagefähige Kosten) ÷ Gesamtinvestition</span>
+          <span class="ex">(5.400 € − 900 €) ÷ 133.284 € = <b>3,4 %</b>. Ehrlicher, weil Nebenkosten und laufende Kosten drinstecken.</span>
+        </li>
+        <li>
+          <span class="st">Darlehen</span>
+          <span class="fx">Gesamtinvestition − Eigenkapital</span>
+          <span class="ex">133.284 € − 30.000 € = <b>103.284 €</b> Fremdkapital.</span>
+        </li>
+        <li>
+          <span class="st">Kreditrate pro Monat</span>
+          <span class="fx">Darlehen × (Sollzins + Tilgung) ÷ 12</span>
+          <span class="ex">103.284 € × (3,8 % + 1,5 %) ÷ 12 = <b>456 €</b>. Die anfängliche Annuität – vereinfacht als konstante Rate.</span>
+        </li>
+        <li>
+          <span class="st">Cashflow vor Steuern pro Monat</span>
+          <span class="fx">Kaltmiete − laufende Kosten − Kreditrate</span>
+          <span class="ex">450 € − 75 € − 456 € = <b>−81 €</b>. Hier noch ohne Steuereffekt.</span>
+        </li>
+        <li>
+          <span class="st">AfA pro Jahr</span>
+          <span class="fx">Gesamtinvestition × Gebäudeanteil × AfA-Satz</span>
+          <span class="ex">133.284 € × 75 % × 2 % = <b>1.999 €</b>. Reine Rechengröße – kostet Sie kein Geld, mindert aber die Steuer.</span>
+        </li>
+        <li>
+          <span class="st">Steuerliches Ergebnis</span>
+          <span class="fx">Jahreskaltmiete − laufende Kosten − Schuldzinsen − AfA</span>
+          <span class="ex">5.400 € − 900 € − 3.925 € − 1.999 € = <b>−1.424 €</b>. Ein Papier-Verlust senkt Ihre Steuerlast.</span>
+        </li>
+        <li>
+          <span class="st">Steuereffekt pro Jahr</span>
+          <span class="fx">steuerliches Ergebnis × Grenzsteuersatz</span>
+          <span class="ex">1.424 € × 42 % = <b>+598 €</b> Erstattung (bei einem Gewinn wäre es eine Nachzahlung).</span>
+        </li>
+        <li>
+          <span class="st">Cashflow nach Steuern pro Monat</span>
+          <span class="fx">Cashflow vor Steuern + Steuereffekt ÷ 12</span>
+          <span class="ex">−81 € + (598 € ÷ 12) = <b>−31 €</b>. Das bleibt am Ende monatlich unterm Strich – der Rest fließt in die Tilgung, also in Ihr Vermögen.</span>
+        </li>
+      </ol>
+      <p>Alle Werte sind bewusst vereinfacht: konstante Annuität statt sinkender Zinsanteile, lineare AfA, Grenzsteuersatz auf das volle Ergebnis, keine Wertentwicklung. Für die erste Einordnung reicht das – die punktgenaue Rechnung mache ich gern mit Ihnen vor Ort in Bannewitz.</p>
+
       <div class="blog-article-cta">
         <h2 style="color:#EDE5D7; margin-top:0;">Ein konkretes Objekt im Blick?</h2>
         <p>Der Rechner gibt die Richtung vor – die ehrliche Feinrechnung mache ich gern mit Ihnen. Ich kenne die Mietniveaus und Lagen in Bannewitz und Umgebung und sage Ihnen offen, ob sich ein Objekt trägt. Kostenlos und unverbindlich.</p>
@@ -287,7 +374,9 @@
   function pct2(n){return new Intl.NumberFormat('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n)+' %';}
   function dec(n){return new Intl.NumberFormat('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1}).format(n);}
   function sgn(n){return (n>=0?'+ ':'− ')+eur.format(Math.abs(n));}
-  function set(id,t){var el=document.getElementById(id);if(el)el.textContent=t;}
+  var firstRun=true;
+  function bump(el){var tile=el.closest&&el.closest('.calc-tile');el.classList.remove('bump');if(tile)tile.classList.remove('glow');void el.offsetWidth;el.classList.add('bump');if(tile)tile.classList.add('glow');}
+  function set(id,t){var el=document.getElementById(id);if(!el)return;var changed=el.textContent!==t;el.textContent=t;if(changed&&!firstRun)bump(el);}
   function calc(){
     var kp=num('kp'),grest=num('grest'),notar=num('notar'),makler=num('makler'),miete=num('miete'),kosten=num('kosten'),ek=num('ek'),zins=num('zins'),tilg=num('tilg');
     var geb=num('gebaeude'),afasatz=num('afasatz'),stsatz=num('steuer');
@@ -323,6 +412,7 @@
   var rb=document.getElementById('calcReset');
   if(rb)rb.addEventListener('click',function(){ids.forEach(function(id){var el=document.getElementById(id);if(el)el.value=defaults[id];});calc();});
   calc();
+  firstRun=false;
 })();
 </script>
 </body>
