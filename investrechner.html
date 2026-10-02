@@ -98,6 +98,9 @@
   .calc-field input::-webkit-outer-spin-button,.calc-field input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0}
   .calc-field input:focus{outline:2px solid var(--pink-deep); outline-offset:1px; border-color:transparent}
   .calc-suffix{position:absolute; right:14px; font-size:14px; color:var(--muted); pointer-events:none; font-weight:500}
+  .calc-hint{display:block; font-size:11.5px; font-weight:400; color:var(--muted); margin-top:2px}
+  .calc-knk-sum{font-size:12.5px; color:var(--muted); margin:-4px 0 15px; padding:9px 13px; background:var(--cream); border:1px dashed var(--line-soft); border-radius:10px}
+  .calc-knk-sum strong{color:var(--ink); font-variant-numeric:tabular-nums}
   .calc-verdict{border-radius:12px; padding:16px 18px; margin-bottom:16px; transition:background .2s}
   .calc-verdict .vlabel{font-size:clamp(19px,3vw,23px); font-weight:800; line-height:1.15; letter-spacing:-.01em}
   .calc-verdict .vtext{font-size:13.5px; margin-top:7px; line-height:1.5; color:var(--ink)}
@@ -134,7 +137,7 @@
       <nav class="breadcrumb" aria-label="Brotkrumen"><a href="#hero">Start</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Investrechner</span></nav>
       <div class="blog-article-meta">Kostenloses Tool · Kapitalanlage</div>
       <h1 id="h1">Rechnet sich diese Immobilie? Ihr Investrechner</h1>
-      <p class="blog-article-excerpt">Eckdaten eingeben und sofort sehen, ob sich eine vermietete Immobilie für Sie rechnet – Rendite, Kaufpreisfaktor und monatlicher Cashflow auf einen Blick. Kostenlos, eigentümerverständlich, für Bannewitz und Umgebung.</p>
+      <p class="blog-article-excerpt">Eckdaten eingeben und sofort sehen, ob sich eine vermietete Immobilie für Sie rechnet – Rendite, Kaufpreisfaktor und monatlicher Cashflow auf einen Blick. Kostenlos, für Bannewitz und Umgebung.</p>
     </div>
   </section>
 
@@ -148,24 +151,33 @@
         <div class="calc-grid">
           <div class="calc-inputs">
             <div class="calc-field"><label for="kp">Kaufpreis</label><div class="calc-inwrap"><input id="kp" type="number" inputmode="decimal" value="320000"><span class="calc-suffix">€</span></div></div>
-            <div class="calc-field"><label for="knk">Kaufnebenkosten (GrESt, Notar, ggf. Makler)</label><div class="calc-inwrap"><input id="knk" type="number" inputmode="decimal" value="9"><span class="calc-suffix">%</span></div></div>
+            <div class="calc-field"><label for="grest">Grunderwerbsteuer (Sachsen)</label><div class="calc-inwrap"><input id="grest" type="number" inputmode="decimal" value="5.5"><span class="calc-suffix">%</span></div></div>
+            <div class="calc-field"><label for="notar">Notar &amp; Grundbuch</label><div class="calc-inwrap"><input id="notar" type="number" inputmode="decimal" value="2"><span class="calc-suffix">%</span></div></div>
+            <div class="calc-field"><label for="makler">Maklerprovision (Käuferanteil, inkl. MwSt.)<span class="calc-hint">0 eintragen, wenn ohne Makler</span></label><div class="calc-inwrap"><input id="makler" type="number" inputmode="decimal" value="3.57"><span class="calc-suffix">%</span></div></div>
+            <p class="calc-knk-sum">Kaufnebenkosten gesamt: <strong id="o_knk">–</strong></p>
             <div class="calc-field"><label for="miete">Kaltmiete pro Monat</label><div class="calc-inwrap"><input id="miete" type="number" inputmode="decimal" value="1200"><span class="calc-suffix">€</span></div></div>
             <div class="calc-field"><label for="kosten">Nicht umlagefähige Kosten / Monat (Verwaltung, Rücklage, Mietausfall)</label><div class="calc-inwrap"><input id="kosten" type="number" inputmode="decimal" value="180"><span class="calc-suffix">€</span></div></div>
             <div class="calc-field"><label for="ek">Eigenkapital</label><div class="calc-inwrap"><input id="ek" type="number" inputmode="decimal" value="100000"><span class="calc-suffix">€</span></div></div>
             <div class="calc-field"><label for="zins">Sollzins p.&nbsp;a.</label><div class="calc-inwrap"><input id="zins" type="number" inputmode="decimal" value="3.8"><span class="calc-suffix">%</span></div></div>
             <div class="calc-field"><label for="tilg">Anfängliche Tilgung p.&nbsp;a.</label><div class="calc-inwrap"><input id="tilg" type="number" inputmode="decimal" value="1.5"><span class="calc-suffix">%</span></div></div>
+            <div class="calc-field"><label for="gebaeude">Gebäudeanteil (für AfA, ohne Grundstück)</label><div class="calc-inwrap"><input id="gebaeude" type="number" inputmode="decimal" value="75"><span class="calc-suffix">%</span></div></div>
+            <div class="calc-field"><label for="afasatz">AfA-Satz p.&nbsp;a.</label><div class="calc-inwrap"><input id="afasatz" type="number" inputmode="decimal" value="2"><span class="calc-suffix">%</span></div></div>
+            <div class="calc-field"><label for="steuer">Persönlicher Steuersatz (Grenzsteuersatz)</label><div class="calc-inwrap"><input id="steuer" type="number" inputmode="decimal" value="42"><span class="calc-suffix">%</span></div></div>
             <button type="button" class="calc-reset" id="calcReset">↺ Beispielwerte zurücksetzen</button>
           </div>
           <div class="calc-results">
             <div class="calc-tiles">
               <div class="calc-tile hl"><div class="tl">Nettomietrendite</div><div class="tv" id="o_netto">–</div></div>
-              <div class="calc-tile hl"><div class="tl">Cashflow / Monat</div><div class="tv" id="o_cf">–</div></div>
-              <div class="calc-tile"><div class="tl">Bruttomietrendite</div><div class="tv" id="o_brutto">–</div></div>
+              <div class="calc-tile hl"><div class="tl">Cashflow n. Steuern / Monat</div><div class="tv" id="o_cfn">–</div></div>
+              <div class="calc-tile"><div class="tl">Cashflow vor Steuern / Monat</div><div class="tv" id="o_cf">–</div></div>
+              <div class="calc-tile"><div class="tl">Steuereffekt / Jahr</div><div class="tv" id="o_steuer">–</div></div>
+              <div class="calc-tile"><div class="tl">AfA / Jahr</div><div class="tv" id="o_afa">–</div></div>
               <div class="calc-tile"><div class="tl">Kaufpreisfaktor</div><div class="tv" id="o_faktor">–</div></div>
+              <div class="calc-tile"><div class="tl">Bruttomietrendite</div><div class="tv" id="o_brutto">–</div></div>
               <div class="calc-tile"><div class="tl">Gesamtinvestition</div><div class="tv" id="o_gesamt">–</div></div>
               <div class="calc-tile"><div class="tl">Kreditrate / Monat</div><div class="tv" id="o_rate">–</div></div>
             </div>
-            <p class="calc-note">Vereinfachte Orientierung, <strong>keine Anlage- oder Steuerberatung</strong>, ohne Gewähr. Die Kreditrate ist die anfängliche Annuität (Zins + Tilgung); Steuern, AfA und Wertentwicklung sind nicht berücksichtigt.</p>
+            <p class="calc-note">Vereinfachte Orientierung, <strong>keine Anlage- oder Steuerberatung</strong>, ohne Gewähr. Die Kreditrate ist die anfängliche Annuität (Zins + Tilgung). AfA und Steuer sind stark vereinfacht einbezogen (lineare AfA auf den Gebäudeanteil, Schuldzinsen als Werbungskosten, Ihr persönlicher Grenzsteuersatz auf das steuerliche Ergebnis) – ohne Sondertilgung, Werbungskosten-Pauschalen oder Wertentwicklung.</p>
           </div>
         </div>
       </div>
@@ -180,6 +192,11 @@
       <h2>Kaufpreisfaktor und Cashflow</h2>
       <p>Der <strong>Kaufpreisfaktor</strong> sagt, wie viele Jahresmieten der Kaufpreis entspricht – je niedriger, desto günstiger das Verhältnis. Der <strong>Cashflow</strong> zeigt, was am Monatsende übrig bleibt: Miete minus laufende Kosten minus Kreditrate.</p>
       <p>Ein leicht negativer Cashflow in den ersten Jahren ist übrigens normal – in der Tilgung steckt Vermögensaufbau. Er muss nur dauerhaft tragbar sein.</p>
+
+      <h2>AfA und Steuer – der Unterschied</h2>
+      <p>Hier wird es spannend. Bei einer vermieteten Immobilie dürfen Sie das Gebäude (nicht das Grundstück) über die Jahre abschreiben – die <strong>AfA</strong>, in der Regel 2 % pro Jahr. Das ist eine reine Rechengröße: Sie mindert Ihr zu versteuerndes Ergebnis, kostet Sie aber keinen Cent zusätzlich.</p>
+      <p>Zusammen mit den Schuldzinsen führt die AfA oft dazu, dass auf dem Papier ein Verlust entsteht – und der senkt Ihre Steuerlast. Aus einem roten Cashflow vor Steuern wird so häufig ein spürbar besserer <strong>Cashflow nach Steuern</strong>. Je höher Ihr persönlicher Steuersatz, desto größer dieser Effekt.</p>
+      <p>Deshalb rechnet der Rechner beides getrennt aus. Tragen Sie Gebäudeanteil, AfA-Satz und Ihren Grenzsteuersatz ein – und Sie sehen, was am Ende wirklich bei Ihnen bleibt. Eine grobe Orientierung, versteht sich; die Feinheiten klärt Ihre Steuerberatung.</p>
 
       <h2>Was das für Bannewitz heißt</h2>
       <p>In Bannewitz, Possendorf und dem Dresdner Umland liegen die Nettorenditen bei gepflegten Objekten erfahrungsgemäß im soliden, nicht spektakulären Bereich – dafür ist die Nachfrage stabil. Für Kapitalanleger:innen heißt das: nicht nur auf die Rendite-Zahl starren, sondern Lage, Zustand und Mietniveau zusammen betrachten. Wie ein realistischer Wert entsteht, lesen Sie im Beitrag <a href="blog/immobilienbewertung-bannewitz">Immobilienbewertung Bannewitz</a>.</p>
@@ -259,15 +276,19 @@
 <script src="js/main.js"></script>
 <script>
 (function(){
-  var ids=['kp','knk','miete','kosten','ek','zins','tilg'];
-  var defaults={kp:320000,knk:9,miete:1200,kosten:180,ek:100000,zins:3.8,tilg:1.5};
+  var ids=['kp','grest','notar','makler','miete','kosten','ek','zins','tilg','gebaeude','afasatz','steuer'];
+  var defaults={kp:320000,grest:5.5,notar:2,makler:3.57,miete:1200,kosten:180,ek:100000,zins:3.8,tilg:1.5,gebaeude:75,afasatz:2,steuer:42};
   var eur=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0});
   function num(id){var el=document.getElementById(id);if(!el)return 0;var v=parseFloat((el.value+'').replace(',','.'));return isNaN(v)?0:v;}
   function pct(n){return new Intl.NumberFormat('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1}).format(n)+' %';}
+  function pct2(n){return new Intl.NumberFormat('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n)+' %';}
   function dec(n){return new Intl.NumberFormat('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1}).format(n);}
+  function sgn(n){return (n>=0?'+ ':'− ')+eur.format(Math.abs(n));}
   function set(id,t){var el=document.getElementById(id);if(el)el.textContent=t;}
   function calc(){
-    var kp=num('kp'),knk=num('knk'),miete=num('miete'),kosten=num('kosten'),ek=num('ek'),zins=num('zins'),tilg=num('tilg');
+    var kp=num('kp'),grest=num('grest'),notar=num('notar'),makler=num('makler'),miete=num('miete'),kosten=num('kosten'),ek=num('ek'),zins=num('zins'),tilg=num('tilg');
+    var geb=num('gebaeude'),afasatz=num('afasatz'),stsatz=num('steuer');
+    var knk=grest+notar+makler;
     var knkEUR=kp*knk/100, gesamt=kp+knkEUR;
     var jahreskalt=miete*12;
     var brutto= kp>0? jahreskalt/kp*100 : 0;
@@ -277,12 +298,23 @@
     var darlehen= Math.max(gesamt-ek,0);
     var annu= darlehen*(zins+tilg)/100, rateM=annu/12;
     var cf= miete - kosten - rateM;
+    // AfA & Steuer (stark vereinfacht)
+    var afaBasis=gesamt*geb/100, afaJahr=afaBasis*afasatz/100;
+    var zinsenJahr=darlehen*zins/100;
+    var ergebnis= jahreskalt - kosten*12 - zinsenJahr - afaJahr; // steuerliches Ergebnis
+    var steuer= ergebnis*stsatz/100;        // >0 Nachzahlung, <0 Erstattung
+    var steuerEffekt= -steuer;              // Liquiditaetswirkung
+    var cfn= cf + steuerEffekt/12;
+    set('o_knk', pct2(knk));
     set('o_brutto', kp>0?pct(brutto):'–');
     set('o_netto', gesamt>0?pct(netto):'–');
     set('o_faktor', jahreskalt>0?dec(faktor):'–');
     set('o_gesamt', eur.format(gesamt));
     set('o_rate', eur.format(rateM));
-    set('o_cf', (cf>=0?'+ ':'− ')+eur.format(Math.abs(cf)));
+    set('o_cf', sgn(cf));
+    set('o_afa', eur.format(afaJahr));
+    set('o_steuer', sgn(steuerEffekt));
+    set('o_cfn', sgn(cfn));
   }
   ids.forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('input',calc);});
   var rb=document.getElementById('calcReset');
