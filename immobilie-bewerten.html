@@ -96,6 +96,25 @@
   .lp-step .n{width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:linear-gradient(145deg,var(--pink-deep),var(--purple)); color:#fff; font-weight:700; font-size:16px; margin-bottom:14px; box-shadow:0 10px 22px -12px rgba(126,42,134,.8)}
   .lp-step h3{font-size:18px; font-weight:600; color:var(--ink); margin:0 0 7px}
   .lp-step p{font-size:14.5px; line-height:1.6; color:var(--muted); margin:0}
+  /* Check-Liste */
+  .lp-list{list-style:none; padding:0; margin:20px 0 0; max-width:66ch}
+  .lp-list li{position:relative; padding:11px 0 11px 36px; border-bottom:1px solid var(--line-soft); font-size:15.5px; line-height:1.55; color:var(--muted); font-weight:300}
+  .lp-list li:last-child{border-bottom:0}
+  .lp-list li::before{content:"✓"; position:absolute; left:0; top:10px; width:23px; height:23px; display:flex; align-items:center; justify-content:center; background:var(--pink-soft); color:var(--pink-deep); border-radius:6px; font-weight:800; font-size:12px}
+  .lp-list li strong{color:var(--ink); font-weight:600}
+  .lp-reassure{margin-top:26px; padding:16px 18px; background:var(--cream-3); border-left:3px solid var(--pink-deep); border-radius:0 var(--radius-lg) var(--radius-lg) 0; font-size:15px; line-height:1.6; color:var(--muted)}
+  .lp-reassure strong{color:var(--ink); font-weight:600}
+  /* Leistungskatalog */
+  .lp-cat{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:30px}
+  @media(max-width:760px){.lp-cat{grid-template-columns:1fr}}
+  .lp-cat-card{background:var(--cream-3); border:1px solid var(--line-soft); border-radius:var(--radius-lg); padding:24px 22px}
+  .lp-cat-card .ph{display:flex; align-items:center; gap:12px; margin:0 0 15px}
+  .lp-cat-card .ph .n{flex:none; width:34px; height:34px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:linear-gradient(145deg,var(--pink-deep),var(--purple)); color:#fff; font-weight:700; font-size:14px; box-shadow:0 8px 18px -10px rgba(126,42,134,.8)}
+  .lp-cat-card .ph h3{font-size:17.5px; font-weight:600; color:var(--ink); margin:0; line-height:1.2}
+  .lp-cat-card ul{list-style:none; padding:0; margin:0}
+  .lp-cat-card li{position:relative; padding:7px 0 7px 26px; font-size:14.5px; line-height:1.5; color:var(--muted); font-weight:300}
+  .lp-cat-card li::before{content:"✓"; position:absolute; left:0; top:7px; color:var(--pink-deep); font-weight:800; font-size:13px}
+  .lp-cat-card li strong{color:var(--ink); font-weight:600}
   /* Tool-Teaser */
   .lp-tool{display:flex; gap:20px; align-items:center; flex-wrap:wrap; background:linear-gradient(145deg,var(--pink-deep),var(--purple)); color:#fff; border-radius:var(--radius-lg); padding:clamp(24px,3.4vw,38px); box-shadow:var(--shadow-soft); margin-top:24px}
   .lp-tool .t{flex:1 1 340px; min-width:0}
@@ -270,6 +289,78 @@
         <h3>Ehrliche Einschätzung</h3>
         <p>Sie erhalten einen realistischen Marktwert-Korridor – offen erklärt, ohne Schönrechnerei.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGSKATALOG -->
+  <section class="lp-section tint">
+    <div class="lp-wide">
+      <h2>Wie geht es nach der Bewertung weiter? Mein Leistungskatalog</h2>
+      <p>Die Bewertung ist der Anfang, nicht das Ende – und <strong>Sie entscheiden</strong>, wie es weitergeht, ganz ohne Druck. Wenn Sie sich für den Verkauf entscheiden, bekommen Sie alles aus einer Hand. Das ist mein kompletter Leistungsumfang:</p>
+      <div class="lp-cat">
+
+        <div class="lp-cat-card">
+          <div class="ph"><span class="n">1</span><h3>Bewertung &amp; Strategie</h3></div>
+          <ul>
+            <li><strong>Kostenlose Wertermittlung</strong> vor Ort mit realistischem Marktwert-Korridor</li>
+            <li>Ehrliche Einordnung von Lage, Zustand und Potenzial</li>
+            <li>Individuelle <strong>Verkaufs- und Preisstrategie</strong></li>
+            <li>Empfehlung des richtigen Verkaufszeitpunkts</li>
+          </ul>
+        </div>
+
+        <div class="lp-cat-card">
+          <div class="ph"><span class="n">2</span><h3>Unterlagen &amp; Vorbereitung</h3></div>
+          <ul>
+            <li>Beschaffung aller <strong>Unterlagen</strong> (Grundbuch, Flurkarte, Grundrisse, Wohnflächen)</li>
+            <li>Organisation des <strong>Energieausweises</strong></li>
+            <li>Tipps zur Verkaufsvorbereitung (Reparaturen, Entrümpeln, Home-Staging-Ideen)</li>
+            <li>Prüfung von Besonderheiten (Lasten, Rechte, Teilungserklärung)</li>
+          </ul>
+        </div>
+
+        <div class="lp-cat-card">
+          <div class="ph"><span class="n">3</span><h3>Professionelle Vermarktung</h3></div>
+          <ul>
+            <li><strong>Hochwertige Fotos</strong> und ein aussagekräftiges Exposé</li>
+            <li>Veröffentlichung auf den großen Portalen (ImmoScout24, Immowelt &amp; Co.)</li>
+            <li>Auf Wunsch <strong>diskrete Vermarktung</strong> im Netzwerk (off-market)</li>
+            <li>Regionale Reichweite in Bannewitz und dem Dresdner Umland</li>
+          </ul>
+        </div>
+
+        <div class="lp-cat-card">
+          <div class="ph"><span class="n">4</span><h3>Interessenten &amp; Besichtigungen</h3></div>
+          <ul>
+            <li>Komplettes <strong>Anfragen-Management</strong>, Sie werden nicht überrannt</li>
+            <li>Vorqualifizierung ernsthafter Interessent:innen</li>
+            <li>Durchführung aller <strong>Besichtigungen</strong> (einzeln oder gebündelt)</li>
+            <li><strong>Bonitäts- und Finanzierungsprüfung</strong> der Kaufinteressenten</li>
+          </ul>
+        </div>
+
+        <div class="lp-cat-card">
+          <div class="ph"><span class="n">5</span><h3>Verhandlung &amp; Abschluss</h3></div>
+          <ul>
+            <li><strong>Preisverhandlung</strong> in Ihrem Sinne, sachlich und mit Marktkenntnis</li>
+            <li>Vorbereitung und Abstimmung des <strong>Kaufvertrags</strong> mit dem Notar</li>
+            <li>Persönliche Begleitung zum <strong>Notartermin</strong></li>
+            <li>Klärung aller Fragen bis zur Unterschrift</li>
+          </ul>
+        </div>
+
+        <div class="lp-cat-card">
+          <div class="ph"><span class="n">6</span><h3>Übergabe &amp; darüber hinaus</h3></div>
+          <ul>
+            <li>Organisierte <strong>Schlüsselübergabe</strong> mit Protokoll (Zählerstände etc.)</li>
+            <li>Nachbetreuung auch nach dem Verkauf</li>
+            <li>Starkes <strong>Netzwerk</strong>: Finanzierung, Handwerk, Steuer, Recht</li>
+            <li>Auf Wunsch Unterstützung bei einer Anschluss-Immobilie</li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="lp-reassure">Und wenn Sie (noch) nicht verkaufen möchten? Dann haben Sie trotzdem <strong>Klarheit über den Wert</strong> – völlig unverbindlich. Sie melden sich einfach, wenn der richtige Zeitpunkt da ist. Unsicher, ob Sie überhaupt eine Maklerin brauchen? Machen Sie den <a href="#quizCard">Selbsttest</a>.</p>
     </div>
   </section>
 
