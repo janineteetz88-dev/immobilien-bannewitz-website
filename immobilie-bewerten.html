@@ -50,7 +50,7 @@
   .lp-hero-grid{max-width:1140px; margin:0 auto; display:grid; grid-template-columns:.92fr 1.08fr; gap:clamp(28px,4.5vw,60px); align-items:center}
   @media(max-width:820px){.lp-hero-grid{grid-template-columns:1fr; gap:26px; text-align:center}}
   .lp-eyebrow{font-size:12px; font-weight:600; letter-spacing:1.6px; text-transform:uppercase; color:var(--pink-deep); margin:0 0 13px}
-  .lp-hero h1{font-size:clamp(30px,5vw,52px); line-height:1.03; letter-spacing:-.02em; font-weight:400; color:var(--ink); margin:0 0 16px}
+  .lp-hero h1{font-size:clamp(26px,3.6vw,42px); line-height:1.05; letter-spacing:-.01em; font-weight:400; color:var(--ink); margin:0 0 16px}
   .lp-hero h1 em{font-style:normal; color:var(--pink-deep)}
   .lp-sub{font-weight:300; font-size:clamp(16px,2vw,20px); line-height:1.6; color:var(--muted); margin:0 0 24px; max-width:56ch}
   @media(max-width:820px){.lp-sub{margin-left:auto; margin-right:auto}}
@@ -58,11 +58,11 @@
   @media(max-width:820px){.lp-cta-row{justify-content:center}}
   .lp-chips{display:flex; flex-wrap:wrap; gap:9px 20px; font-size:13.5px; color:var(--muted-2); font-weight:500}
   @media(max-width:820px){.lp-chips{justify-content:center}}
-  @media(max-width:820px){.lp-hero-badge{left:50%; right:auto; transform:translateX(-50%)} .lp-tel{display:block; text-align:center}}
+  @media(max-width:820px){.lp-hero-badge{left:50%; right:auto; transform:translateX(-50%)} .lp-tel{display:block; text-align:center} .lp-hero-media{min-height:360px; max-width:420px; margin:0 auto}}
   .lp-chips span{display:inline-flex; align-items:center; gap:7px}
   .lp-chips span::before{content:"✓"; color:var(--pink-deep); font-weight:800}
-  .lp-hero-media{position:relative}
-  .lp-hero-media img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; border-radius:var(--radius-lg); box-shadow:var(--shadow-soft); display:block}
+  .lp-hero-media{position:relative; align-self:stretch; min-height:300px}
+  .lp-hero-media img{width:100%; height:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 28%; border-radius:3px; display:block; position:relative}
   .lp-hero-badge{position:absolute; left:auto; right:-12px; bottom:22px; background:#fff; border-radius:var(--radius-lg); box-shadow:var(--shadow-soft); padding:11px 16px 11px 12px; font-size:13px; font-weight:600; color:var(--ink); display:flex; align-items:center; gap:10px; max-width:84%}
   .lp-hero-text .btn-xl{padding:19px 36px; font-size:15.5px}
   .lp-tel{display:inline-block; margin-top:16px; color:var(--pink-deep); font-weight:600; font-size:15.5px; text-decoration:none}
@@ -142,6 +142,7 @@
   <section class="lp-hero" aria-labelledby="lp-h1">
     <div class="lp-hero-grid">
       <div class="lp-hero-media">
+        <div class="lp-about-frame"></div>
         <picture><source srcset="assets/images/janine-portrait.webp" type="image/webp"><img src="assets/images/janine-portrait.jpg" alt="Janine Kreiser, Immobilienmaklerin aus Bannewitz" width="1400" height="1051" decoding="async" loading="eager" fetchpriority="high"></picture>
         <div class="lp-hero-badge"><span class="d">✓</span>Ihre Maklerin aus Bannewitz</div>
       </div>
