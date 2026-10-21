@@ -220,15 +220,15 @@ button{font-family:var(--ff); cursor:pointer}
 
 /* ===== Über mich / Tabs ===== */
 .ueber-grid{
-  display:grid; grid-template-columns:1.1fr .95fr;
-  grid-template-areas:"head media" "tabs media" "stats media";
+  display:grid; grid-template-columns:.95fr 1.1fr;
+  grid-template-areas:"media head" "media tabs" "media stats";
   row-gap:22px; column-gap:clamp(40px,6vw,96px); align-items:start;
 }
 .ueber-head-block{grid-area:head}
 .ueber-tabs-block{grid-area:tabs}
 .ueber-stats{grid-area:stats}
 .ueber-media{grid-area:media; position:relative; align-self:stretch; min-height:280px}
-.ueber-frame{position:absolute; inset:20px -20px -20px 20px; border:1px solid #C8956B; opacity:.5}
+.ueber-frame{position:absolute; inset:20px 20px -20px -20px; border:1px solid #C8956B; opacity:.5}
 .ueber-photo{
   display:block; position:relative; width:100%; height:100%; aspect-ratio:4/5;
   object-fit:cover; object-position:center 30%;
