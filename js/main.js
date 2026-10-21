@@ -544,8 +544,8 @@
       askingEl.hidden = true;
       bookingEl.hidden = false;
       bookedEl.hidden = true;
-      renderDayList();
-      renderTimeList();
+      if(dayListEl) renderDayList();
+      if(timeListEl) renderTimeList();
       validate();
     }
 
@@ -574,7 +574,9 @@
     function validate(){
       var emailVal = emailInput.value.trim();
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
-      var ok = !!(state.day && state.time && nameInput.value.trim() && phoneInput.value.trim() && emailOk);
+      var daySel = dayListEl ? !!state.day : true;
+      var timeSel = timeListEl ? !!state.time : true;
+      var ok = !!(daySel && timeSel && nameInput.value.trim() && phoneInput.value.trim() && emailOk);
       submitBtn.disabled = !ok;
     }
 
@@ -591,7 +593,9 @@
     }
 
     function submitBooking(){
-      if(!(state.day && state.time)) return;
+      if(dayListEl && !state.day) return;
+      if(timeListEl && !state.time) return;
+      if(submitBtn.disabled) return;
       if(errorEl) errorEl.hidden = true;
       submitBtn.disabled = true;
       submitBtn.classList.add('loading');
