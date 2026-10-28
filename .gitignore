@@ -1,0 +1,3 @@
+# Vertrauliche Unterlagen – nicht einchecken, nicht deployen
+.unterlagen/
+*.pdf
