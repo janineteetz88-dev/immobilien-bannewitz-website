@@ -106,6 +106,17 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 .ln-terms{font-size:14px;line-height:1.7;color:var(--muted);font-weight:300}
 .ln-terms li{margin:6px 0}
 .ln-terms b{color:var(--ink);font-weight:600}
+.ln-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:22px 0 24px}
+.ln-step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;font-size:14.5px;line-height:1.55;color:var(--muted);font-weight:300}
+.ln-step b{color:var(--ink);font-weight:600}
+.ln-step a{color:var(--pink-deep);font-weight:600}
+.ln-num{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--pink-deep));color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
+@media (max-width:760px){.ln-steps{grid-template-columns:1fr}}
+.ln-band{width:100%;max-height:440px;overflow:hidden}
+.ln-band img{width:100%;height:440px;object-fit:cover;display:block}
+.ln-figure{margin:28px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px -34px rgba(60,42,24,.5)}
+.ln-figure img{width:100%;display:block}
+@media (max-width:760px){.ln-band img{height:300px}}
 /* Warteliste-Form */
 .ln-form-sec{background:linear-gradient(160deg,var(--pink-deep),var(--purple));color:#fff}
 .ln-form-card{max-width:620px;margin:0 auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);
@@ -172,6 +183,8 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     </div>
   </section>
 
+  <div class="ln-band"><picture><source srcset="assets/images/ladies-night-hero.webp" type="image/webp"><img src="assets/images/ladies-night-hero.jpg" alt="Lachende Frauen verschiedener Generationen stoßen bei der Bannewitzer Ladies Night mit Sekt an" width="1344" height="752" loading="eager" decoding="async"></picture></div>
+
   <!-- ============ INTRO ============ -->
   <section class="ln-sec" aria-labelledby="ln-intro-h">
     <div class="in">
@@ -179,6 +192,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
       <h2 id="ln-intro-h" class="ln-h2">Man kennt sich – aber immer nur im Vorbeigehen.</h2>
       <p class="ln-p">Beim Bäcker, am Elternabend, im Supermarkt: Man sieht sich, grüßt sich, und weiter geht's. Die <strong>1. Bannewitzer Ladies Night</strong> ist der Abend, an dem wir uns endlich in Ruhe begegnen – bei guter Musik, einem Glas in der Hand und ohne Blick auf die Uhr.</p>
       <p class="ln-p">Ein Abend zum Tanzen, Lachen und Kennenlernen. Nur für Frauen, mitten in Bannewitz. Lassen Sie sich den Alltag für ein paar Stunden aus dem Kopf tanzen.</p>
+      <figure class="ln-figure"><picture><source srcset="assets/images/ladies-night-talk.webp" type="image/webp"><img src="assets/images/ladies-night-talk.jpg" alt="Drei Frauen unterhalten sich lachend bei einem Glas Sekt" width="1024" height="688" loading="lazy" decoding="async"></picture></figure>
     </div>
   </section>
 
@@ -191,7 +205,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
         <div>
           <p class="ln-p">Von jedem verkauften Ticket gehen <strong>2 €</strong> an einen Bannewitzer Verein. <strong>immobilien-bannewitz.de verdoppelt diesen Betrag</strong> und rundet die Spende großzügig auf <strong>1.000 €</strong> auf.</p>
           <p class="ln-p">Welcher Verein die Spende erhält, entscheidet eine <strong>Verlosung live am Abend</strong>. Vereine aus der Gemeinde Bannewitz können sich kostenlos bewerben – ganz ohne Ticketkauf.</p>
-          <p class="ln-p" style="font-size:15px"><strong>Verein anmelden:</strong> kurze E-Mail mit Vereinsname, Sitz, Ansprechpartner:in und geplanter Mittelverwendung an <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20%E2%80%93%20Verein%20anmelden" style="color:var(--pink-deep);font-weight:600">info@immobilien-bannewitz.de</a> – Einsendeschluss 22.12.2026.</p>
+          <p class="ln-p" style="font-size:15px">Ihr Verein möchte mitlosen? Alle Infos und die Teilnahmebedingungen stehen gleich darunter.</p>
         </div>
         <div class="ln-donate">
           <div class="big">1.000&nbsp;€</div>
@@ -199,14 +213,31 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
           <div class="sub">2 € je Ticket · von uns verdoppelt &amp; aufgerundet · Gewinner per Losentscheid</div>
         </div>
       </div>
-      <details class="ln-acc" style="margin-top:26px">
-        <summary>Teilnahmebedingungen der Spendenverlosung <span class="ic" aria-hidden="true">+</span></summary>
+    </div>
+  </section>
+
+  <!-- ============ FÜR VEREINE ============ -->
+  <section class="ln-sec" aria-labelledby="ln-vereine-h">
+    <div class="in">
+      <span class="ln-eyebrow"><span class="dot"></span>Für Vereine</span>
+      <h2 id="ln-vereine-h" class="ln-h2">Vereine aus Bannewitz: Jetzt ums Mitlosen bewerben.</h2>
+      <p class="ln-p">Ihr Verein hat seinen Sitz in der Gemeinde Bannewitz? Dann bewerben Sie sich kostenlos um die Spende – unabhängig vom Ticketkauf. Eine kurze E-Mail genügt. So sind Sie dabei:</p>
+      <div class="ln-steps">
+        <div class="ln-step"><span class="ln-num">1</span><div><b>E-Mail schreiben</b><br>mit Vereinsname, Sitz, Ansprechpartner:in und der geplanten Verwendung der Spende an <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20%E2%80%93%20Verein%20anmelden">info@immobilien-bannewitz.de</a>.</div></div>
+        <div class="ln-step"><span class="ln-num">2</span><div><b>Frist einhalten</b><br>Die E-Mail muss bis <b>20. Januar 2027</b> bei uns eingegangen sein, damit Ihr Verein in den Lostopf kommt.</div></div>
+        <div class="ln-step"><span class="ln-num">3</span><div><b>Vertreterin entsenden</b><br>Jeder teilnehmende Verein schickt eine <b>Vertreterin zur Party</b> am 23. Januar 2027.</div></div>
+      </div>
+      <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20%E2%80%93%20Verein%20anmelden" class="btn" style="margin-top:4px">Verein anmelden</a>
+
+      <details class="ln-acc" style="margin-top:28px">
+        <summary>Vollständige Teilnahmebedingungen der Spendenverlosung <span class="ic" aria-hidden="true">+</span></summary>
         <div class="body">
           <ul class="ln-terms">
             <li><b>Veranstalterin:</b> Janine Kreiser, finaconsil, Dresden. immobilien-bannewitz.de ist eine Marke von finaconsil.</li>
             <li><b>Teilnahmeberechtigt:</b> Vereine mit Sitz in der Gemeinde Bannewitz. Die Teilnahme ist kostenlos und unabhängig vom Ticketkauf. Eine Anmeldung je Verein.</li>
-            <li><b>Anmeldeschluss:</b> 22.12.2026, 23:59 Uhr, per E-Mail mit Vereinsname, Sitz, Ansprechpartner:in und geplanter Mittelverwendung.</li>
-            <li><b>Verlosung:</b> am 23.01.2027 während der Veranstaltung. Gewinner-Vereine werden – falls kein Mitglied anwesend ist – per E-Mail benachrichtigt.</li>
+            <li><b>Anmeldeschluss:</b> 20.01.2027, 23:59 Uhr. Bis dahin muss die E-Mail mit Vereinsname, Sitz, Ansprechpartner:in und geplanter Mittelverwendung bei info@immobilien-bannewitz.de eingegangen sein.</li>
+            <li><b>Vertreterin vor Ort:</b> Jeder teilnehmende Verein entsendet eine Vertreterin zur Veranstaltung am 23.01.2027.</li>
+            <li><b>Verlosung:</b> am 23.01.2027 während der Veranstaltung. Gewinner-Vereine werden – falls keine Vertreterin anwesend ist – zusätzlich per E-Mail benachrichtigt.</li>
             <li><b>Gewinn:</b> die aus den Ticketverkäufen entstandene Spende wird verdoppelt und auf 1.000 € aufgerundet; Auszahlung an den Gewinner-Verein innerhalb von vier Wochen nach der Veranstaltung. Keine Übertragung oder Barauszahlung.</li>
             <li><b>Veröffentlichung:</b> Gewinner-Vereine erklären sich damit einverstanden, dass ihr Name auf den Websites und in den sozialen Medien der Veranstalterin genannt werden darf.</li>
             <li><b>Absage:</b> findet die Veranstaltung nicht statt, entfällt die Spende; der ausgeloste Verein wird per E-Mail informiert.</li>
@@ -218,7 +249,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
   </section>
 
   <!-- ============ FAQ ============ -->
-  <section class="ln-sec" aria-labelledby="ln-faq-h">
+  <section class="ln-sec alt" aria-labelledby="ln-faq-h">
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Kurz gefragt</span>
       <h2 id="ln-faq-h" class="ln-h2">Die wichtigsten Fragen</h2>
@@ -228,6 +259,8 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
       <details class="ln-acc"><summary>Sind weitere Veranstaltungen geplant? <span class="ic" aria-hidden="true">+</span></summary><div class="body"><p>Ja. Eine Kinderdisco und weitere Treffen sind in Planung. Die Warteliste erfährt davon zuerst.</p></div></details>
     </div>
   </section>
+
+  <div class="ln-band"><picture><source srcset="assets/images/ladies-night-dance.webp" type="image/webp"><img src="assets/images/ladies-night-dance.jpg" alt="Zwei Frauen tanzen und lachen ausgelassen auf einer Party mit Lichterketten" width="1024" height="688" loading="lazy" decoding="async"></picture></div>
 
   <!-- ============ WARTELISTE ============ -->
   <section class="ln-sec ln-form-sec" id="warteliste" aria-labelledby="ln-form-h">
