@@ -3,7 +3,7 @@
   // Kontaktformular-Endpunkt: Supabase-Edge-Funktion (verschickt per Resend an
   // die Maklerin). Seit dem Umzug auf Cloudflare Pages läuft die Seite statisch
   // — der frühere PHP-/forminit-Weg entfällt.
-  var KONTAKT_ENDPOINT = 'https://lrhmyboevoxtlvoxnrny.supabase.co/functions/v1/makler-kontakt';
+  var KONTAKT_ENDPOINT = 'https://cbqakqnfrjbdcvpsqmir.supabase.co/functions/v1/makler-kontakt';
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Mobile Nav ---------- */

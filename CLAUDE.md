@@ -15,9 +15,17 @@ immobilien-bannewitz.de (Marke von finaconsil): Inhalte, Blog, Layout, Deploy.
   GitHub wird NICHT für Pages genutzt.
 - **Veröffentlichen:** `./deploy.sh` (nutzt `CLOUDFLARE_API_TOKEN` aus der Umgebung).
   Ersetzt immer den GESAMTEN Stand. Deploy hängt NICHT am Code-Host (wrangler direkt).
-- **Kontaktformular:** Supabase-Edge-Funktion `makler-kontakt` (Projekt
-  lrhmyboevoxtlvoxnrny) → verschickt per All-Inkl-SMTP über `info@immobilien-bannewitz.de`
+- **Supabase (EIGENES Makler-Projekt, getrennt von ConjuExpert!):**
+  Projekt `immobilien-bannewitz` = Ref `cbqakqnfrjbdcvpsqmir` (EU/Frankfurt, Janines Konto).
+  NICHT das ConjuExpert-Projekt `lrhmyboevoxtlvoxnrny` verwenden.
+- **Kontaktformular:** Edge-Funktion `makler-kontakt` (im Makler-Projekt
+  `cbqakqnfrjbdcvpsqmir`) → verschickt per All-Inkl-SMTP über `info@immobilien-bannewitz.de`
   an info@ + j.kreiser@finaconsil.de. Kein ConjuExpert/Resend mehr.
+- **Ladies-Night-Warteliste:** Edge-Funktion `ladies-night-warteliste` + Tabelle
+  `ladies_night_warteliste` (ebenfalls im Makler-Projekt `cbqakqnfrjbdcvpsqmir`).
+  Speichert Anmeldungen + schickt Bestätigungs-Mail an die Anmelderin.
+- **SMTP-Secret:** `SMTP_PASS` (All-Inkl-Passwort von info@immobilien-bannewitz.de)
+  muss im Makler-Projekt gesetzt sein, sonst gehen keine Mails raus (Fehler 535).
 - **DNS:** bei Cloudflare; **Mail-MX bei All-Inkl — nie anfassen.**
 - **Stil:** „Sie"-Ansprache, warm/hochwertig; Blog mit Gender-Doppelpunkt.
 - **Ortsbezug (immer!):** In Blog, Social & allen Inhalten stets lokalen Bezug
