@@ -79,8 +79,8 @@
 .ln-hero .breadcrumb,.ln-hero .breadcrumb a,.ln-hero .breadcrumb .sep,.ln-hero .breadcrumb [aria-current]{color:rgba(255,255,255,.82)}
 .ln-hero .ln-title{text-shadow:0 2px 18px rgba(0,0,0,.35)}
 /* Sticker / Aufkleber oben rechts */
-.ln-sticker{position:absolute;top:clamp(230px,30vw,360px);right:clamp(2px,1.4vw,22px);z-index:4;
-  width:clamp(168px,19vw,218px);height:clamp(168px,19vw,218px);
+.ln-sticker{position:absolute;top:clamp(140px,18vw,206px);right:clamp(10px,5vw,98px);z-index:4;
+  width:clamp(188px,22vw,254px);height:clamp(188px,22vw,254px);
   --burst:polygon(100% 50%,83.1% 55.6%,94.5% 69.1%,77.3% 67.4%,83.4% 83.4%,67.4% 77.3%,69.1% 94.5%,55.6% 83.1%,50% 100%,44.4% 83.1%,30.9% 94.5%,32.6% 77.3%,16.6% 83.4%,22.7% 67.4%,5.5% 69.1%,16.9% 55.6%,0% 50%,16.9% 44.4%,5.5% 30.9%,22.7% 32.6%,16.6% 16.6%,32.6% 22.7%,30.9% 5.5%,44.4% 16.9%,50% 0%,55.6% 16.9%,69.1% 5.5%,67.4% 22.7%,83.4% 16.6%,77.3% 32.6%,94.5% 30.9%,83.1% 44.4%);
   background:#fff;clip-path:var(--burst);text-decoration:none;transform:rotate(-8deg);
   display:grid;place-items:center;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45));transition:transform .15s}
@@ -90,6 +90,21 @@
 .ln-sticker .k{display:block;font-size:clamp(7.5px,.85vw,10px);font-weight:700;text-transform:uppercase;letter-spacing:.03em;opacity:.95;white-space:nowrap}
 .ln-sticker .n{display:block;font-size:clamp(14px,1.55vw,18px);font-weight:800;margin:2px 0 3px;font-family:Georgia,'Times New Roman',serif;line-height:1.02;white-space:nowrap}
 .ln-sticker .u{display:block;font-size:clamp(6.5px,.68vw,8.5px);font-weight:700;letter-spacing:0;opacity:.95;line-height:1.2}
+/* Logo-Lockup: Event-Logo-Kasten mit Stern an der Ecke */
+.ln-logo-wrap{display:flex;justify-content:center;margin:6px 0 32px;position:relative;z-index:2}
+.ln-logo{position:relative;display:inline-block;text-align:center;transform:rotate(-1.5deg);
+  background:linear-gradient(145deg,var(--pink),var(--pink-deep));border-radius:20px;
+  padding:clamp(20px,2.6vw,30px) clamp(40px,6vw,86px) clamp(22px,2.8vw,32px);
+  box-shadow:0 34px 72px -40px rgba(200,40,111,.6)}
+.ln-logo .ll-ord{display:block;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#ffd7e8;font-weight:600}
+.ln-logo .ll-name{display:block;margin-top:7px;font-family:'Yeseva One',Georgia,serif;color:#fff;font-size:clamp(28px,4vw,46px);line-height:1.0}
+.ln-sticker.ln-sticker--corner{top:clamp(-64px,-6.2vw,-42px);right:clamp(-56px,-5.2vw,-34px);
+  width:clamp(128px,15vw,170px);height:clamp(128px,15vw,170px);transform:rotate(-10deg)}
+.ln-sticker.ln-sticker--corner:hover{transform:rotate(-10deg) scale(1.05)}
+.ln-sticker--corner .k{font-size:clamp(6px,.66vw,7.5px)}
+.ln-sticker--corner .n{font-size:clamp(10.5px,1.2vw,14.5px);margin:1px 0 2px}
+.ln-sticker--corner .u{font-size:clamp(5px,.54vw,6.5px);letter-spacing:0}
+@media (max-width:620px){.ln-logo{transform:rotate(-1.5deg) scale(.9)}}
 .ln-hero .ln-credit-m{display:none}
 @media (max-width:620px){.ln-sticker{display:none}.ln-hero .ln-credit-m{display:inline-flex;margin:0 0 6px}}
 .ln-kick{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
@@ -254,11 +269,17 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
   </section>
 
   <!-- ============ WARUM ============ -->
-  <section class="ln-sec alt ln-has-sticker" aria-labelledby="ln-why-h">
-    <a class="ln-sticker" href="#warteliste" aria-label="Organisiert von Vicki, Aline und Janine, unterstützt von immobilien-bannewitz.de – zur Warteliste"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki,<br>Aline &amp;<br>Janine</span><span class="u">unterstützt von<br>immobilien-bannewitz.de</span></span></span></a>
+  <section class="ln-sec alt" aria-labelledby="ln-why-h">
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Warum wir das machen</span>
       <h2 id="ln-why-h" class="ln-h2">Weil wir uns Highlights im eigenen Ort wünschen.</h2>
+      <div class="ln-logo-wrap">
+        <div class="ln-logo">
+          <span class="ll-ord">Die 1.</span>
+          <span class="ll-name">Bannewitzer<br>Ladies Night</span>
+          <a class="ln-sticker ln-sticker--corner" href="./" aria-label="Organisiert von Vicki, Aline und Janine, unterstützt von immobilien-bannewitz.de – zur Startseite immobilien-bannewitz.de"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki,<br>Aline &amp;<br>Janine</span><span class="u">unterstützt von<br>immobilien-bannewitz.de</span></span></span></a>
+        </div>
+      </div>
       <div class="ln-card">
         <p class="ln-p">Mal ehrlich: In den Dresdner Clubs müssen wir nicht mehr unbedingt sein. Und als Mamas sind wir im Alltag oft das „Nebenbei" – zuständig für alles und alle, immer irgendwie in Bewegung.</p>
         <p class="ln-p">Genau deshalb wollen wir in <strong>unserem eigenen Ort</strong> etwas schaffen: Abende, auf die man sich freut. Bekannte Gesichter wiedersehen, Bekanntschaften vertiefen und neue Mädels kennenlernen – und uns einfach mal selbst aus dem Alltag herausholen.</p>
