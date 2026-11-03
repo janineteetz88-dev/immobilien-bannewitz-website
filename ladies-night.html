@@ -60,11 +60,32 @@
 </script>
 <style>
 /* ===== Ladies Night – seiten­spezifisch (CI: Pink/Creme/Sora) ===== */
-.ln-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#fff 0%,var(--cream-2) 55%,var(--tint,#FBE9F1) 100%);
-  padding:clamp(56px,8vh,96px) clamp(24px,5vw,80px) clamp(54px,8vh,82px)}
-.ln-hero::before{content:"";position:absolute;top:-20%;right:-10%;width:50vw;height:50vw;max-width:620px;max-height:620px;
-  background:radial-gradient(circle,rgba(233,32,124,.14),transparent 62%);pointer-events:none}
-.ln-hero .in{max-width:1000px;margin:0 auto;position:relative;text-align:center}
+.ln-hero{position:relative;overflow:hidden;background:#241319;
+  padding:clamp(56px,8vh,96px) clamp(24px,5vw,80px) clamp(60px,9vh,96px)}
+.ln-hero::after{content:"";position:absolute;inset:0;z-index:0;
+  background:linear-gradient(180deg,rgba(22,11,16,.48) 0%,rgba(22,11,16,.60) 55%,rgba(22,11,16,.78) 100%),url('assets/images/ladies-night-hero.jpg?v=2') center 28%/cover no-repeat}
+.ln-hero .in{max-width:1000px;margin:0 auto;position:relative;z-index:1;text-align:center}
+/* Hero-Text hell über dem Foto */
+.ln-hero .ln-title{color:var(--pink)}
+.ln-hero .ln-title .l2{color:#fff}
+.ln-hero .ln-kick{color:#ffd3e6}
+.ln-hero .ln-kick .dot{background:#fff}
+.ln-hero .ln-ord{color:rgba(255,255,255,.82)}
+.ln-hero .ln-when{color:#fff}
+.ln-hero .ln-lede{color:rgba(255,255,255,.92)}
+.ln-hero .ln-note{color:rgba(255,255,255,.8)}
+.ln-hero .breadcrumb,.ln-hero .breadcrumb a,.ln-hero .breadcrumb .sep,.ln-hero .breadcrumb [aria-current]{color:rgba(255,255,255,.82)}
+.ln-hero .ln-title{text-shadow:0 2px 18px rgba(0,0,0,.35)}
+/* Sticker / Aufkleber oben rechts */
+.ln-sticker{position:absolute;top:clamp(54px,8vh,92px);right:clamp(14px,4vw,56px);z-index:3;
+  width:clamp(90px,11vw,124px);height:clamp(90px,11vw,124px);border-radius:50%;
+  background:var(--pink);color:#fff;transform:rotate(-11deg);text-decoration:none;
+  display:grid;place-items:center;text-align:center;border:3px solid #fff;
+  box-shadow:0 14px 30px -12px rgba(0,0,0,.6);transition:transform .15s}
+.ln-sticker:hover{transform:rotate(-11deg) scale(1.06)}
+.ln-sticker span{font-weight:800;font-size:clamp(12px,1.4vw,15px);letter-spacing:.04em;text-transform:uppercase;line-height:1.12}
+.ln-sticker .s{display:block;font-size:1.7em;line-height:.9;margin-bottom:1px}
+@media (max-width:620px){.ln-sticker{width:74px;height:74px;top:12px;right:10px;border-width:2px}.ln-sticker span{font-size:10.5px}}
 .ln-kick{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--pink-deep);font-weight:600}
 .ln-kick .dot{width:7px;height:7px;border-radius:50%;background:var(--pink)}
@@ -166,25 +187,25 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 
   <!-- ============ HERO ============ -->
   <section class="ln-hero" aria-labelledby="ln-h1">
+    <a class="ln-sticker" href="#warteliste" aria-label="Zur Warteliste"><span><span class="s">★</span>Sei<br>dabei!</span></a>
     <div class="in">
       <nav class="breadcrumb" aria-label="Brotkrumen" style="justify-content:center;display:flex"><a href="./#hero">Start</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Ladies Night</span></nav>
       <p class="ln-kick"><span class="dot"></span>Organisiert von den Bannewitzerinnen Vicki &amp; Janine · unterstützt von immobilien-bannewitz.de</p>
       <div class="ln-ord">Die 1.</div>
       <h1 id="ln-h1" class="ln-title">Bannewitzer<span class="l2">Ladies Night</span></h1>
       <p class="ln-when">Samstag, 23. Januar 2027 · 20–24 Uhr · in Bannewitz</p>
-      <p style="margin:8px auto 0;font-size:14px;color:var(--muted)">Der genaue Veranstaltungsort wird noch bekannt gegeben.</p>
+      <p style="margin:8px auto 0;font-size:14px;color:rgba(255,255,255,.8)">Der genaue Veranstaltungsort wird noch bekannt gegeben.</p>
       <p class="ln-lede">Ein Abend nur für Bannewitzer Frauen: tanzen, quatschen, den Alltag vergessen. Schnell sein lohnt sich – die Warteliste füllt sich bereits.</p>
       <div class="ln-meta">
         <span class="ln-chip"><b>14,99 €</b> pro Ticket</span>
         <span class="ln-chip">nur <b>200 Tickets</b></span>
-        <span class="ln-chip">Musik: <b>DJ Rick Maneira</b></span>
+        <span class="ln-chip">Musik: <a href="https://www.instagram.com/rick_menaira/?hl=de" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:2px">DJ Rick Maneira</a></span>
       </div>
       <a href="#warteliste" class="btn">Auf die Warteliste</a>
       <p class="ln-note">Kostenlos &amp; unverbindlich – wer auf der Warteliste steht, erfährt als Erste vom Ticket-Verkaufsstart.</p>
     </div>
   </section>
 
-  <div class="ln-band"><picture><source srcset="assets/images/ladies-night-hero.webp" type="image/webp"><img src="assets/images/ladies-night-hero.jpg" alt="Lachende Frauen verschiedener Generationen stoßen bei der Bannewitzer Ladies Night mit Sekt an" width="1344" height="752" loading="eager" decoding="async"></picture></div>
 
   <div class="ln-ticker" aria-hidden="true">
     <div class="track">
@@ -202,7 +223,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
       <h2 id="ln-intro-h" class="ln-h2">Man kennt sich – aber immer nur im Vorbeigehen.</h2>
       <p class="ln-p">Beim Bäcker, zum Elternabend, im Supermarkt: Man sieht sich, grüßt sich, und weiter geht's. Die <strong>1. Bannewitzer Ladies Night</strong> ist der Abend, an dem wir endlich zusammen feiern – bei guter Musik, einem Glas in der Hand und ohne Blick auf die Uhr.</p>
       <p class="ln-p">Ein Abend zum Tanzen, Lachen und Kennenlernen. Nur für Frauen, mitten in Bannewitz. Lass dir den Alltag für ein paar Stunden aus dem Kopf tanzen.</p>
-      <figure class="ln-figure"><picture><source srcset="assets/images/ladies-night-talk.webp" type="image/webp"><img src="assets/images/ladies-night-talk.jpg" alt="Drei Frauen unterhalten sich lachend bei einem Glas Sekt" width="1024" height="688" loading="lazy" decoding="async"></picture></figure>
+      <figure class="ln-figure"><picture><source srcset="assets/images/ladies-night-talk.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-talk.jpg?v=2" alt="Drei Frauen unterhalten sich lachend bei einem Glas Sekt" width="1024" height="688" loading="lazy" decoding="async"></picture></figure>
     </div>
   </section>
 
@@ -214,6 +235,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
       <p class="ln-p">Mal ehrlich: In den Dresdner Clubs müssen wir nicht mehr unbedingt sein. Und als Mamas sind wir im Alltag oft das „Nebenbei" – zuständig für alles und alle, immer irgendwie in Bewegung.</p>
       <p class="ln-p">Genau deshalb wollen wir in <strong>unserem eigenen Ort</strong> etwas schaffen: Abende, auf die man sich freut. Bekannte Gesichter wiedersehen, Bekanntschaften vertiefen und neue Mädels kennenlernen – und uns einfach mal selbst aus dem Alltag herausholen.</p>
       <p class="ln-p">Kleine und große Highlights, mitten in Bannewitz: <strong>kurze Wege, vertraute Gesichter, gute Laune.</strong></p>
+      <p class="ln-p">Und noch etwas ist uns wichtig: <strong>Alle Altersgruppen sind ausdrücklich willkommen</strong> – von den jungen Bannewitzerinnen bis zu denen, die schon ein paar Partys mehr gefeiert haben. Hier feiert die ganze Gemeinde zusammen.</p>
     </div>
   </section>
 
@@ -246,7 +268,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
       <div class="ln-steps">
         <div class="ln-step"><span class="ln-num">1</span><div><b>E-Mail schreiben</b><br>mit Vereinsname, Sitz, Ansprechpartner:in und der geplanten Verwendung der Spende an <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20%E2%80%93%20Verein%20anmelden">info@immobilien-bannewitz.de</a>.</div></div>
         <div class="ln-step"><span class="ln-num">2</span><div><b>Frist einhalten</b><br>Die E-Mail muss bis <b>20. Januar 2027</b> bei uns eingegangen sein, damit dein Verein in den Lostopf kommt.</div></div>
-        <div class="ln-step"><span class="ln-num">3</span><div><b>Vertreterin mitbringen</b><br>Jeder teilnehmende Verein schickt eine <b>Vertreterin zur Party</b> am 23. Januar 2027.</div></div>
+        <div class="ln-step"><span class="ln-num">3</span><div><b>Vertreterin mitbringen</b><br>Jeder teilnehmende Verein schickt <b>mindestens eine Vertreterin zur Party</b> am 23. Januar 2027. Für sie ist der <b>Eintritt frei</b> – ganz ohne Ticketkauf.</div></div>
       </div>
       <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20%E2%80%93%20Verein%20anmelden" class="btn" style="margin-top:4px">Verein anmelden</a>
 
@@ -257,10 +279,10 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
             <li><b>Veranstalterin:</b> Janine Kreiser, finaconsil, Dresden. immobilien-bannewitz.de ist eine Marke von finaconsil.</li>
             <li><b>Teilnahmeberechtigt:</b> Vereine mit Sitz in der Gemeinde Bannewitz. Die Teilnahme ist kostenlos und unabhängig vom Ticketkauf. Eine Anmeldung je Verein.</li>
             <li><b>Anmeldeschluss:</b> 20.01.2027, 23:59 Uhr. Bis dahin muss die E-Mail mit Vereinsname, Sitz, Ansprechpartner:in und geplanter Mittelverwendung bei info@immobilien-bannewitz.de eingegangen sein.</li>
-            <li><b>Vertreterin vor Ort:</b> Jeder teilnehmende Verein schickt eine Vertreterin zur Veranstaltung am 23.01.2027.</li>
-            <li><b>Verlosung:</b> am 23.01.2027 während der Veranstaltung. Gewinner-Vereine werden – falls keine Vertreterin anwesend ist – zusätzlich per E-Mail benachrichtigt.</li>
+            <li><b>Vertreterin vor Ort:</b> Jeder teilnehmende Verein schickt mindestens eine Vertreterin zur Veranstaltung am 23.01.2027. Für die Vertreterin ist der Eintritt frei; ein Ticketkauf ist nicht erforderlich.</li>
+            <li><b>Verlosung:</b> am 23.01.2027 während der Veranstaltung. Der Gewinner-Verein wird – falls keine Vertreterin anwesend ist – zusätzlich per E-Mail benachrichtigt.</li>
             <li><b>Gewinn:</b> die aus den Ticketverkäufen entstandene Spende wird verdoppelt und auf 1.000 € aufgerundet; Auszahlung an den Gewinner-Verein innerhalb von vier Wochen nach der Veranstaltung. Keine Übertragung oder Barauszahlung.</li>
-            <li><b>Veröffentlichung:</b> Gewinner-Vereine erklären sich damit einverstanden, dass ihr Name auf den Websites und in den sozialen Medien der Veranstalterin genannt werden darf.</li>
+            <li><b>Veröffentlichung:</b> Der Gewinner-Verein erklärt sich damit einverstanden, dass sein Name auf den Websites und in den sozialen Medien der Veranstalterin genannt werden darf.</li>
             <li><b>Absage:</b> findet die Veranstaltung nicht statt, entfällt die Spende; der ausgeloste Verein wird per E-Mail informiert.</li>
             <li><b>Datenschutz:</b> Die Daten werden ausschließlich für Verlosung und Spende verwendet (Art. 6 Abs. 1 lit. b DSGVO) und nach Abwicklung gelöscht, soweit keine gesetzlichen Aufbewahrungspflichten bestehen.</li>
           </ul>
@@ -281,7 +303,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     </div>
   </section>
 
-  <div class="ln-band"><picture><source srcset="assets/images/ladies-night-dance.webp" type="image/webp"><img src="assets/images/ladies-night-dance.jpg" alt="Zwei Frauen tanzen und lachen ausgelassen auf einer Party mit Lichterketten" width="1024" height="688" loading="lazy" decoding="async"></picture></div>
+  <div class="ln-band"><picture><source srcset="assets/images/ladies-night-dance.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-dance.jpg?v=2" alt="Zwei Frauen tanzen und lachen ausgelassen auf einer Party mit Lichterketten" width="1024" height="688" loading="lazy" decoding="async"></picture></div>
 
   <!-- ============ WARTELISTE ============ -->
   <section class="ln-sec ln-form-sec" id="warteliste" aria-labelledby="ln-form-h">
@@ -342,7 +364,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 
 <script>
 (function(){
-  var ENDPOINT = 'https://lrhmyboevoxtlvoxnrny.supabase.co/functions/v1/makler-kontakt';
+  var ENDPOINT = 'https://lrhmyboevoxtlvoxnrny.supabase.co/functions/v1/ladies-night-warteliste';
   var form = document.getElementById('lnForm');
   if(!form) return;
   var vn = document.getElementById('ln-vorname');
@@ -368,7 +390,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     fetch(ENDPOINT, {
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify({ name: vnv, email: emv, consent: 'ja', events: (csEv && csEv.checked) ? 'ja' : 'nein', source: 'Ladies-Night Warteliste' + ((csEv && csEv.checked) ? ' (+ weitere Veranstaltungen)' : ''), website: hp ? hp.value : '' })
+      body: JSON.stringify({ vorname: vnv, email: emv, consent: 'ja', events: (csEv && csEv.checked) ? 'ja' : 'nein', source: 'Ladies-Night Warteliste', website: hp ? hp.value : '' })
     }).then(function(res){ if(!res.ok) throw new Error('req'); return res.json(); })
       .then(function(data){ if(!data || !data.ok) throw new Error('resp');
         form.reset(); okEl.hidden = false; form.hidden = true;
