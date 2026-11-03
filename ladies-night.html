@@ -117,6 +117,16 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 .ln-figure{margin:28px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px -34px rgba(60,42,24,.5)}
 .ln-figure img{width:100%;display:block}
 @media (max-width:760px){.ln-band img{height:300px}}
+/* Lauftext-Band */
+.ln-ticker{background:linear-gradient(90deg,var(--pink),var(--pink-deep));overflow:hidden;white-space:nowrap}
+.ln-ticker .track{display:inline-flex;align-items:center;animation:lnmarquee 30s linear infinite;will-change:transform}
+.ln-ticker span{display:inline-flex;align-items:center;color:#fff;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;padding:13px 0}
+.ln-ticker .star{padding:0 28px;opacity:.8}
+@keyframes lnmarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ln-ticker .track{animation:none}}
+/* Motto-Band */
+.ln-statement{padding:clamp(42px,7vh,78px) clamp(24px,5vw,80px);text-align:center;background:var(--cream)}
+.ln-statement h2{max-width:920px;margin:0 auto;font-size:clamp(27px,4.8vw,54px);line-height:1.08;letter-spacing:-.5px;text-transform:uppercase;font-weight:800;color:var(--pink-deep);text-wrap:balance}
 /* Warteliste-Form */
 .ln-form-sec{background:linear-gradient(160deg,var(--pink-deep),var(--purple));color:#fff}
 .ln-form-card{max-width:620px;margin:0 auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);
@@ -158,10 +168,11 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
   <section class="ln-hero" aria-labelledby="ln-h1">
     <div class="in">
       <nav class="breadcrumb" aria-label="Brotkrumen" style="justify-content:center;display:flex"><a href="./#hero">Start</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Ladies Night</span></nav>
-      <p class="ln-kick"><span class="dot"></span>Organisiert von den Bannewitzerinnen · unterstützt von immobilien-bannewitz.de</p>
-      <div class="ln-ord">Die erste</div>
+      <p class="ln-kick"><span class="dot"></span>Organisiert von den Bannewitzerinnen Vicki &amp; Janine · unterstützt von immobilien-bannewitz.de</p>
+      <div class="ln-ord">Die 1.</div>
       <h1 id="ln-h1" class="ln-title">Bannewitzer<span class="l2">Ladies Night</span></h1>
       <p class="ln-when">Samstag, 23. Januar 2027 · 20–24 Uhr · in Bannewitz</p>
+      <p style="margin:8px auto 0;font-size:14px;color:var(--muted)">Der genaue Veranstaltungsort wird noch bekannt gegeben.</p>
       <p class="ln-lede">Ein Abend nur für Bannewitzer Frauen: tanzen, quatschen, den Alltag vergessen. Schnell sein lohnt sich – die Warteliste füllt sich bereits.</p>
       <div class="ln-meta">
         <span class="ln-chip"><b>14,99 €</b> pro Ticket</span>
@@ -175,6 +186,15 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 
   <div class="ln-band"><picture><source srcset="assets/images/ladies-night-hero.webp" type="image/webp"><img src="assets/images/ladies-night-hero.jpg" alt="Lachende Frauen verschiedener Generationen stoßen bei der Bannewitzer Ladies Night mit Sekt an" width="1344" height="752" loading="eager" decoding="async"></picture></div>
 
+  <div class="ln-ticker" aria-hidden="true">
+    <div class="track">
+      <span>Nur 200 Tickets</span><span class="star">★</span><span>DJ Rick Maneira</span><span class="star">★</span><span>14,99 €</span><span class="star">★</span><span>23. Januar 2027</span><span class="star">★</span><span>Schnell sein lohnt sich</span><span class="star">★</span><span>Auf die Warteliste</span><span class="star">★</span><span>Nur 200 Tickets</span><span class="star">★</span><span>DJ Rick Maneira</span><span class="star">★</span><span>14,99 €</span><span class="star">★</span><span>23. Januar 2027</span><span class="star">★</span><span>Schnell sein lohnt sich</span><span class="star">★</span><span>Auf die Warteliste</span><span class="star">★</span>
+    </div>
+  </div>
+  <section class="ln-statement" aria-label="Motto des Abends">
+    <h2>240 Minuten tanzen, reden und die Welt ringsherum ausschalten.</h2>
+  </section>
+
   <!-- ============ INTRO ============ -->
   <section class="ln-sec" aria-labelledby="ln-intro-h">
     <div class="in">
@@ -186,8 +206,19 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     </div>
   </section>
 
+  <!-- ============ WARUM ============ -->
+  <section class="ln-sec alt" aria-labelledby="ln-why-h">
+    <div class="in">
+      <span class="ln-eyebrow"><span class="dot"></span>Warum wir das machen</span>
+      <h2 id="ln-why-h" class="ln-h2">Weil wir uns Highlights im eigenen Ort wünschen.</h2>
+      <p class="ln-p">Mal ehrlich: In den Dresdner Clubs müssen wir nicht mehr unbedingt sein. Und als Mamas sind wir im Alltag oft das „Nebenbei" – zuständig für alles und alle, immer irgendwie in Bewegung.</p>
+      <p class="ln-p">Genau deshalb wollen wir in <strong>unserem eigenen Ort</strong> etwas schaffen: Abende, auf die man sich freut. Bekannte Gesichter wiedersehen, Bekanntschaften vertiefen und neue Mädels kennenlernen – und uns einfach mal selbst aus dem Alltag herausholen.</p>
+      <p class="ln-p">Kleine und große Highlights, mitten in Bannewitz: <strong>kurze Wege, vertraute Gesichter, gute Laune.</strong></p>
+    </div>
+  </section>
+
   <!-- ============ GUTER ZWECK ============ -->
-  <section class="ln-sec alt" aria-labelledby="ln-charity-h">
+  <section class="ln-sec" aria-labelledby="ln-charity-h">
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Feiern für den guten Zweck</span>
       <h2 id="ln-charity-h" class="ln-h2">Ein Abend, der auch etwas zurückgibt.</h2>
@@ -207,7 +238,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
   </section>
 
   <!-- ============ FÜR VEREINE ============ -->
-  <section class="ln-sec" id="vereine" aria-labelledby="ln-vereine-h">
+  <section class="ln-sec alt" id="vereine" aria-labelledby="ln-vereine-h">
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Für Vereine</span>
       <h2 id="ln-vereine-h" class="ln-h2">Vereine aus Bannewitz: Jetzt ums Mitlosen bewerben.</h2>
@@ -239,7 +270,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
   </section>
 
   <!-- ============ FAQ ============ -->
-  <section class="ln-sec alt" aria-labelledby="ln-faq-h">
+  <section class="ln-sec" aria-labelledby="ln-faq-h">
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Kurz gefragt</span>
       <h2 id="ln-faq-h" class="ln-h2">Die wichtigsten Fragen</h2>
