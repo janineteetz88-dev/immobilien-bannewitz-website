@@ -51,6 +51,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    { "@type": "Question", "name": "Wer ist immobilien-bannewitz.de?", "acceptedAnswer": { "@type": "Answer", "text": "Dahinter steckt die Immobilienmaklerin Janine Kreiser aus Bannewitz – eine Marke von finaconsil. Janine ist selbst Bannewitzerin und Mit-Organisatorin der Ladies Night: Sie unterstützt den Abend und verdoppelt die Spende für den guten Zweck. Hauptberuflich hilft sie Eigentümern dabei, ihre Immobilie in Bannewitz und Umgebung fair zu bewerten und zu verkaufen." } },
     { "@type": "Question", "name": "Darf ich Freundinnen aus anderen Orten mitbringen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, sehr gern. Jede Besucherin braucht aber ihr eigenes Ticket." } },
     { "@type": "Question", "name": "Warum nur Frauen?", "acceptedAnswer": { "@type": "Answer", "text": "Wir möchten einen Raum schaffen, in dem Frauen sich frei und wohl fühlen und in dem sie entspannt andere Frauen aus der Region kennenlernen." } },
     { "@type": "Question", "name": "Wie bekomme ich ein Ticket?", "acceptedAnswer": { "@type": "Answer", "text": "Über die Warteliste. Wer darauf steht, erfährt als Erste, sobald der Ticketverkauf startet – das ist Anfang Dezember, perfekt als Weihnachtsgeschenk für deine Freundin." } },
@@ -78,17 +79,17 @@
 .ln-hero .ln-title{text-shadow:0 2px 18px rgba(0,0,0,.35)}
 /* Sticker / Aufkleber oben rechts */
 .ln-sticker{position:absolute;top:clamp(46px,7vh,86px);right:clamp(8px,3.2vw,46px);z-index:3;
-  width:clamp(128px,15vw,172px);height:clamp(128px,15vw,172px);
+  width:clamp(152px,18.5vw,212px);height:clamp(152px,18.5vw,212px);
   --burst:polygon(100% 50%,83.1% 55.6%,94.5% 69.1%,77.3% 67.4%,83.4% 83.4%,67.4% 77.3%,69.1% 94.5%,55.6% 83.1%,50% 100%,44.4% 83.1%,30.9% 94.5%,32.6% 77.3%,16.6% 83.4%,22.7% 67.4%,5.5% 69.1%,16.9% 55.6%,0% 50%,16.9% 44.4%,5.5% 30.9%,22.7% 32.6%,16.6% 16.6%,32.6% 22.7%,30.9% 5.5%,44.4% 16.9%,50% 0%,55.6% 16.9%,69.1% 5.5%,67.4% 22.7%,83.4% 16.6%,77.3% 32.6%,94.5% 30.9%,83.1% 44.4%);
   background:#fff;clip-path:var(--burst);text-decoration:none;transform:rotate(-8deg);
   display:grid;place-items:center;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45));transition:transform .15s}
 .ln-sticker:hover{transform:rotate(-8deg) scale(1.05)}
 .ln-sticker .burst{width:89%;height:89%;background:var(--pink);clip-path:var(--burst);display:grid;place-items:center}
 .ln-sticker .txt{color:#fff;text-align:center;max-width:78%;line-height:1.1;font-family:Arial,Helvetica,sans-serif}
-.ln-sticker .k{display:block;font-size:clamp(8px,.78vw,9.5px);font-weight:700;text-transform:uppercase;letter-spacing:.03em;opacity:.95;white-space:nowrap}
-.ln-sticker .n{display:block;font-size:clamp(12px,1.3vw,15.5px);font-weight:800;margin:2px 0 3px;font-family:Georgia,'Times New Roman',serif;line-height:1;white-space:nowrap}
-.ln-sticker .u{display:block;font-size:clamp(7px,.72vw,8.5px);font-weight:700;letter-spacing:.02em;opacity:.95;line-height:1.2}
-@media (max-width:620px){.ln-sticker{top:8px;right:4px}}
+.ln-sticker .k{display:block;font-size:clamp(8.5px,.95vw,11px);font-weight:700;text-transform:uppercase;letter-spacing:.03em;opacity:.95;white-space:nowrap}
+.ln-sticker .n{display:block;font-size:clamp(14px,1.75vw,21px);font-weight:800;margin:3px 0 4px;font-family:Georgia,'Times New Roman',serif;line-height:1;white-space:nowrap}
+.ln-sticker .u{display:block;font-size:clamp(7.5px,.85vw,10px);font-weight:700;letter-spacing:.02em;opacity:.95;line-height:1.25}
+@media (max-width:620px){.ln-sticker{display:none}}
 .ln-kick{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--pink-deep);font-weight:600}
 .ln-kick .dot{width:7px;height:7px;border-radius:50%;background:var(--pink)}
@@ -321,6 +322,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Kurz gefragt</span>
       <h2 id="ln-faq-h" class="ln-h2">Die wichtigsten Fragen</h2>
+      <details class="ln-acc"><summary>Wer ist immobilien-bannewitz.de? <span class="ic" aria-hidden="true">+</span></summary><div class="body"><p>Dahinter steckt die Immobilienmaklerin <strong>Janine Kreiser</strong> aus Bannewitz – eine Marke von finaconsil. Janine ist selbst Bannewitzerin und Mit-Organisatorin der Ladies Night: Sie unterstützt den Abend und verdoppelt die Spende für den guten Zweck. Hauptberuflich hilft sie Eigentümer:innen dabei, ihre Immobilie in Bannewitz und Umgebung fair zu bewerten und zu verkaufen. Mehr dazu auf <a href="./" style="color:var(--pink-deep);font-weight:600">immobilien-bannewitz.de</a>.</p></div></details>
       <details class="ln-acc"><summary>Darf ich Freundinnen aus anderen Orten mitbringen? <span class="ic" aria-hidden="true">+</span></summary><div class="body"><p>Ja, sehr gern. Jede Besucherin braucht aber ihr eigenes Ticket.</p></div></details>
       <details class="ln-acc"><summary>Warum nur Frauen? <span class="ic" aria-hidden="true">+</span></summary><div class="body"><p>Wir möchten einen Raum schaffen, in dem Frauen sich frei und wohl fühlen und in dem sie entspannt andere Frauen aus der Region kennenlernen.</p></div></details>
       <details class="ln-acc"><summary>Wie bekomme ich ein Ticket? <span class="ic" aria-hidden="true">+</span></summary><div class="body"><p>Über die Warteliste. Wer darauf steht, erfährt als Erste, sobald der Ticketverkauf startet – das ist Anfang Dezember, perfekt als Weihnachtsgeschenk für deine Freundin.</p></div></details>
