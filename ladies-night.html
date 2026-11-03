@@ -77,15 +77,16 @@
 .ln-hero .breadcrumb,.ln-hero .breadcrumb a,.ln-hero .breadcrumb .sep,.ln-hero .breadcrumb [aria-current]{color:rgba(255,255,255,.82)}
 .ln-hero .ln-title{text-shadow:0 2px 18px rgba(0,0,0,.35)}
 /* Sticker / Aufkleber oben rechts */
-.ln-sticker{position:absolute;top:clamp(54px,8vh,92px);right:clamp(14px,4vw,56px);z-index:3;
-  width:clamp(90px,11vw,124px);height:clamp(90px,11vw,124px);border-radius:50%;
-  background:var(--pink);color:#fff;transform:rotate(-11deg);text-decoration:none;
-  display:grid;place-items:center;text-align:center;border:3px solid #fff;
-  box-shadow:0 14px 30px -12px rgba(0,0,0,.6);transition:transform .15s}
-.ln-sticker:hover{transform:rotate(-11deg) scale(1.06)}
-.ln-sticker span{font-weight:800;font-size:clamp(12px,1.4vw,15px);letter-spacing:.04em;text-transform:uppercase;line-height:1.12}
-.ln-sticker .s{display:block;font-size:1.7em;line-height:.9;margin-bottom:1px}
-@media (max-width:620px){.ln-sticker{width:74px;height:74px;top:12px;right:10px;border-width:2px}.ln-sticker span{font-size:10.5px}}
+.ln-sticker{position:absolute;top:clamp(46px,7vh,86px);right:clamp(8px,3.2vw,46px);z-index:3;
+  width:clamp(106px,12.5vw,142px);height:clamp(106px,12.5vw,142px);
+  --burst:polygon(100% 50%,83.1% 55.6%,94.5% 69.1%,77.3% 67.4%,83.4% 83.4%,67.4% 77.3%,69.1% 94.5%,55.6% 83.1%,50% 100%,44.4% 83.1%,30.9% 94.5%,32.6% 77.3%,16.6% 83.4%,22.7% 67.4%,5.5% 69.1%,16.9% 55.6%,0% 50%,16.9% 44.4%,5.5% 30.9%,22.7% 32.6%,16.6% 16.6%,32.6% 22.7%,30.9% 5.5%,44.4% 16.9%,50% 0%,55.6% 16.9%,69.1% 5.5%,67.4% 22.7%,83.4% 16.6%,77.3% 32.6%,94.5% 30.9%,83.1% 44.4%);
+  background:#fff;clip-path:var(--burst);text-decoration:none;transform:rotate(-8deg);
+  display:grid;place-items:center;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45));transition:transform .15s}
+.ln-sticker:hover{transform:rotate(-8deg) scale(1.06)}
+.ln-sticker .burst{width:88%;height:88%;background:var(--pink);clip-path:var(--burst);display:grid;place-items:center}
+.ln-sticker .txt{color:#fff;font-weight:800;font-size:clamp(12px,1.35vw,15px);letter-spacing:.03em;text-transform:uppercase;line-height:1.1;text-align:center}
+.ln-sticker .s{display:block;font-size:1.5em;line-height:.85;margin-bottom:1px}
+@media (max-width:620px){.ln-sticker{width:94px;height:94px;top:10px;right:6px}.ln-sticker .txt{font-size:11px}}
 .ln-kick{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--pink-deep);font-weight:600}
 .ln-kick .dot{width:7px;height:7px;border-radius:50%;background:var(--pink)}
@@ -187,7 +188,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 
   <!-- ============ HERO ============ -->
   <section class="ln-hero" aria-labelledby="ln-h1">
-    <a class="ln-sticker" href="#warteliste" aria-label="Zur Warteliste"><span><span class="s">★</span>Sei<br>dabei!</span></a>
+    <a class="ln-sticker" href="#warteliste" aria-label="Zur Warteliste"><span class="burst"><span class="txt"><span class="s">★</span>Sei<br>dabei!</span></span></a>
     <div class="in">
       <nav class="breadcrumb" aria-label="Brotkrumen" style="justify-content:center;display:flex"><a href="./#hero">Start</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Ladies Night</span></nav>
       <p class="ln-kick"><span class="dot"></span>Organisiert von den Bannewitzerinnen Vicki &amp; Janine · unterstützt von immobilien-bannewitz.de</p>
@@ -209,7 +210,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 
   <div class="ln-ticker" aria-hidden="true">
     <div class="track">
-      <span>Nur 200 Tickets</span><span class="star">★</span><span>DJ Rick Maneira</span><span class="star">★</span><span>14,99 €</span><span class="star">★</span><span>23. Januar 2027</span><span class="star">★</span><span>Schnell sein lohnt sich</span><span class="star">★</span><span>Auf die Warteliste</span><span class="star">★</span><span>Nur 200 Tickets</span><span class="star">★</span><span>DJ Rick Maneira</span><span class="star">★</span><span>14,99 €</span><span class="star">★</span><span>23. Januar 2027</span><span class="star">★</span><span>Schnell sein lohnt sich</span><span class="star">★</span><span>Auf die Warteliste</span><span class="star">★</span>
+      <span>Nur 200 Tickets</span><span class="star">★</span><span>DJ Rick Maneira</span><span class="star">★</span><span>14,99 €</span><span class="star">★</span><span>23. Januar 2027</span><span class="star">★</span><span>In Bannewitz · Ort wird noch bekannt gegeben</span><span class="star">★</span><span>Schnell sein lohnt sich</span><span class="star">★</span><span>Auf die Warteliste</span><span class="star">★</span><span>Nur 200 Tickets</span><span class="star">★</span><span>DJ Rick Maneira</span><span class="star">★</span><span>14,99 €</span><span class="star">★</span><span>23. Januar 2027</span><span class="star">★</span><span>In Bannewitz · Ort wird noch bekannt gegeben</span><span class="star">★</span><span>Schnell sein lohnt sich</span><span class="star">★</span><span>Auf die Warteliste</span><span class="star">★</span>
     </div>
   </div>
   <section class="ln-statement" aria-label="Motto des Abends">
