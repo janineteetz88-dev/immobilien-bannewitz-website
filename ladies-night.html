@@ -92,6 +92,10 @@
 .ln-sticker .u{display:block;font-size:clamp(6.5px,.68vw,8.5px);font-weight:700;letter-spacing:0;opacity:.95;line-height:1.2}
 /* Logo-Lockup: Event-Logo-Kasten mit Stern an der Ecke */
 .ln-logo-wrap{display:flex;justify-content:center;margin:6px 0 32px;position:relative;z-index:2}
+.ln-band--logo{position:relative}
+.ln-band--logo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,5,8,.30),rgba(10,5,8,.46))}
+.ln-logo-wrap--on-photo{position:absolute;inset:0;margin:0;z-index:2;align-items:center}
 .ln-logo{position:relative;display:inline-block;text-align:center;transform:rotate(-1.5deg);
   background:linear-gradient(145deg,var(--pink),var(--pink-deep));border-radius:20px;
   padding:clamp(20px,2.6vw,30px) clamp(40px,6vw,86px) clamp(22px,2.8vw,32px);
@@ -273,13 +277,6 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Warum wir das machen</span>
       <h2 id="ln-why-h" class="ln-h2">Weil wir uns Highlights im eigenen Ort wünschen.</h2>
-      <div class="ln-logo-wrap">
-        <div class="ln-logo">
-          <span class="ll-ord">Die 1.</span>
-          <span class="ll-name">Bannewitzer<br>Ladies Night</span>
-          <a class="ln-sticker ln-sticker--corner" href="./" aria-label="Organisiert von Vicki, Aline und Janine, unterstützt von immobilien-bannewitz.de – zur Startseite immobilien-bannewitz.de"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki,<br>Aline &amp;<br>Janine</span><span class="u">unterstützt von<br>immobilien-bannewitz.de</span></span></span></a>
-        </div>
-      </div>
       <div class="ln-card">
         <p class="ln-p">Mal ehrlich: In den Dresdner Clubs müssen wir nicht mehr unbedingt sein. Und als Mamas sind wir im Alltag oft das „Nebenbei" – zuständig für alles und alle, immer irgendwie in Bewegung.</p>
         <p class="ln-p">Genau deshalb wollen wir in <strong>unserem eigenen Ort</strong> etwas schaffen: Abende, auf die man sich freut. Bekannte Gesichter wiedersehen, Bekanntschaften vertiefen und neue Mädels kennenlernen – und uns einfach mal selbst aus dem Alltag herausholen.</p>
@@ -354,7 +351,15 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     </div>
   </section>
 
-  <div class="ln-band"><picture><source srcset="assets/images/ladies-night-dance.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-dance.jpg?v=2" alt="Zwei Frauen tanzen und lachen ausgelassen auf einer Party mit Lichterketten" width="1024" height="688" loading="lazy" decoding="async"></picture></div>
+  <div class="ln-band ln-band--logo"><picture><source srcset="assets/images/ladies-night-dance.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-dance.jpg?v=2" alt="Zwei Frauen tanzen und lachen ausgelassen auf einer Party mit Lichterketten" width="1024" height="688" loading="lazy" decoding="async"></picture>
+    <div class="ln-logo-wrap ln-logo-wrap--on-photo">
+      <div class="ln-logo">
+        <span class="ll-ord">Die 1.</span>
+        <span class="ll-name">Bannewitzer<br>Ladies Night</span>
+        <a class="ln-sticker ln-sticker--corner" href="./" aria-label="Organisiert von Vicki, Aline und Janine, unterstützt von immobilien-bannewitz.de – zur Startseite immobilien-bannewitz.de"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki,<br>Aline &amp;<br>Janine</span><span class="u">unterstützt von<br>immobilien-bannewitz.de</span></span></span></a>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ WARTELISTE ============ -->
   <section class="ln-sec ln-form-sec" id="warteliste" aria-labelledby="ln-form-h">
