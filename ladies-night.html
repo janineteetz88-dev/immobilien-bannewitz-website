@@ -78,15 +78,17 @@
 .ln-hero .ln-title{text-shadow:0 2px 18px rgba(0,0,0,.35)}
 /* Sticker / Aufkleber oben rechts */
 .ln-sticker{position:absolute;top:clamp(46px,7vh,86px);right:clamp(8px,3.2vw,46px);z-index:3;
-  width:clamp(106px,12.5vw,142px);height:clamp(106px,12.5vw,142px);
+  width:clamp(128px,15vw,172px);height:clamp(128px,15vw,172px);
   --burst:polygon(100% 50%,83.1% 55.6%,94.5% 69.1%,77.3% 67.4%,83.4% 83.4%,67.4% 77.3%,69.1% 94.5%,55.6% 83.1%,50% 100%,44.4% 83.1%,30.9% 94.5%,32.6% 77.3%,16.6% 83.4%,22.7% 67.4%,5.5% 69.1%,16.9% 55.6%,0% 50%,16.9% 44.4%,5.5% 30.9%,22.7% 32.6%,16.6% 16.6%,32.6% 22.7%,30.9% 5.5%,44.4% 16.9%,50% 0%,55.6% 16.9%,69.1% 5.5%,67.4% 22.7%,83.4% 16.6%,77.3% 32.6%,94.5% 30.9%,83.1% 44.4%);
   background:#fff;clip-path:var(--burst);text-decoration:none;transform:rotate(-8deg);
   display:grid;place-items:center;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45));transition:transform .15s}
-.ln-sticker:hover{transform:rotate(-8deg) scale(1.06)}
-.ln-sticker .burst{width:88%;height:88%;background:var(--pink);clip-path:var(--burst);display:grid;place-items:center}
-.ln-sticker .txt{color:#fff;font-weight:800;font-size:clamp(12px,1.35vw,15px);letter-spacing:.03em;text-transform:uppercase;line-height:1.1;text-align:center}
-.ln-sticker .s{display:block;font-size:1.5em;line-height:.85;margin-bottom:1px}
-@media (max-width:620px){.ln-sticker{width:94px;height:94px;top:10px;right:6px}.ln-sticker .txt{font-size:11px}}
+.ln-sticker:hover{transform:rotate(-8deg) scale(1.05)}
+.ln-sticker .burst{width:89%;height:89%;background:var(--pink);clip-path:var(--burst);display:grid;place-items:center}
+.ln-sticker .txt{color:#fff;text-align:center;max-width:78%;line-height:1.1;font-family:Arial,Helvetica,sans-serif}
+.ln-sticker .k{display:block;font-size:clamp(8px,.78vw,9.5px);font-weight:700;text-transform:uppercase;letter-spacing:.03em;opacity:.95;white-space:nowrap}
+.ln-sticker .n{display:block;font-size:clamp(12px,1.3vw,15.5px);font-weight:800;margin:2px 0 3px;font-family:Georgia,'Times New Roman',serif;line-height:1;white-space:nowrap}
+.ln-sticker .u{display:block;font-size:clamp(7px,.72vw,8.5px);font-weight:700;letter-spacing:.02em;opacity:.95;line-height:1.2}
+@media (max-width:620px){.ln-sticker{top:8px;right:4px}}
 .ln-kick{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--pink-deep);font-weight:600}
 .ln-kick .dot{width:7px;height:7px;border-radius:50%;background:var(--pink)}
@@ -174,6 +176,25 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 .ln-alt{margin-top:18px;font-size:13px;color:rgba(255,255,255,.82);text-align:center}
 .ln-alt a{color:#fff;text-decoration:underline}
 @media (max-width:760px){.ln-charity{grid-template-columns:1fr;gap:20px}}
+/* ---- Aufpeppen: Karten, Pills, moderne Akzente ---- */
+.ln-sec{position:relative;overflow:hidden}
+.ln-sec .in{position:relative;z-index:1}
+.ln-sec::before{content:"";position:absolute;z-index:0;width:min(60vw,560px);height:min(60vw,560px);border-radius:50%;
+  background:radial-gradient(circle,rgba(233,32,124,.10),transparent 68%);top:-18%;right:-12%;pointer-events:none}
+.ln-sec.alt::before{left:-14%;right:auto;background:radial-gradient(circle,rgba(233,32,124,.08),transparent 68%)}
+.ln-eyebrow{background:#fff;border:1px solid var(--line);padding:7px 15px 7px 13px;border-radius:40px;
+  box-shadow:0 12px 26px -22px rgba(60,42,24,.7)}
+.ln-card{background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:clamp(22px,3.6vw,34px) clamp(22px,3.6vw,34px) clamp(22px,3.6vw,34px) clamp(28px,4vw,42px);
+  box-shadow:0 30px 64px -46px rgba(60,42,24,.55);position:relative;overflow:hidden}
+.ln-card::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:4px;border-radius:4px;
+  background:linear-gradient(180deg,var(--pink),var(--pink-deep))}
+.ln-card .ln-p:last-child{margin-bottom:0}
+.ln-sec.alt .ln-card{background:#FBF8F1}
+.ln-donate{background:linear-gradient(160deg,#fff,#FBE9F1);box-shadow:0 30px 64px -40px rgba(200,40,111,.45)}
+.ln-step{transition:transform .15s ease,box-shadow .2s ease}
+.ln-step:hover{transform:translateY(-3px);box-shadow:0 26px 50px -36px rgba(60,42,24,.45)}
+.ln-figure{margin-top:30px}
 </style>
 </head>
 <body class="has-eventbar">
@@ -188,10 +209,9 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 
   <!-- ============ HERO ============ -->
   <section class="ln-hero" aria-labelledby="ln-h1">
-    <a class="ln-sticker" href="#warteliste" aria-label="Zur Warteliste"><span class="burst"><span class="txt"><span class="s">★</span>Sei<br>dabei!</span></span></a>
+    <a class="ln-sticker" href="#warteliste" aria-label="Organisiert von Vicki und Janine, unterstützt von immobilien-bannewitz.de – zur Warteliste"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki &amp; Janine</span><span class="u">unterstützt von<br>immobilien-bannewitz.de</span></span></span></a>
     <div class="in">
       <nav class="breadcrumb" aria-label="Brotkrumen" style="justify-content:center;display:flex"><a href="./#hero">Start</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Ladies Night</span></nav>
-      <p class="ln-kick"><span class="dot"></span>Organisiert von den Bannewitzerinnen Vicki &amp; Janine · unterstützt von immobilien-bannewitz.de</p>
       <div class="ln-ord">Die 1.</div>
       <h1 id="ln-h1" class="ln-title">Bannewitzer<span class="l2">Ladies Night</span></h1>
       <p class="ln-when">Samstag, 23. Januar 2027 · 20–24 Uhr · in Bannewitz</p>
@@ -222,8 +242,10 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Ein Abend nur für uns</span>
       <h2 id="ln-intro-h" class="ln-h2">Man kennt sich – aber immer nur im Vorbeigehen.</h2>
-      <p class="ln-p">Beim Bäcker, zum Elternabend, im Supermarkt: Man sieht sich, grüßt sich, und weiter geht's. Die <strong>1. Bannewitzer Ladies Night</strong> ist der Abend, an dem wir endlich zusammen feiern – bei guter Musik, einem Glas in der Hand und ohne Blick auf die Uhr.</p>
-      <p class="ln-p">Ein Abend zum Tanzen, Lachen und Kennenlernen. Nur für Frauen, mitten in Bannewitz. Lass dir den Alltag für ein paar Stunden aus dem Kopf tanzen.</p>
+      <div class="ln-card">
+        <p class="ln-p">Beim Bäcker, zum Elternabend, im Supermarkt: Man sieht sich, grüßt sich, und weiter geht's. Die <strong>1. Bannewitzer Ladies Night</strong> ist der Abend, an dem wir endlich zusammen feiern – bei guter Musik, einem Glas in der Hand und ohne Blick auf die Uhr.</p>
+        <p class="ln-p">Ein Abend zum Tanzen, Lachen und Kennenlernen. Nur für Frauen, mitten in Bannewitz. Lass dir den Alltag für ein paar Stunden aus dem Kopf tanzen.</p>
+      </div>
       <figure class="ln-figure"><picture><source srcset="assets/images/ladies-night-talk.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-talk.jpg?v=2" alt="Drei Frauen unterhalten sich lachend bei einem Glas Sekt" width="1024" height="688" loading="lazy" decoding="async"></picture></figure>
     </div>
   </section>
@@ -233,10 +255,12 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Warum wir das machen</span>
       <h2 id="ln-why-h" class="ln-h2">Weil wir uns Highlights im eigenen Ort wünschen.</h2>
-      <p class="ln-p">Mal ehrlich: In den Dresdner Clubs müssen wir nicht mehr unbedingt sein. Und als Mamas sind wir im Alltag oft das „Nebenbei" – zuständig für alles und alle, immer irgendwie in Bewegung.</p>
-      <p class="ln-p">Genau deshalb wollen wir in <strong>unserem eigenen Ort</strong> etwas schaffen: Abende, auf die man sich freut. Bekannte Gesichter wiedersehen, Bekanntschaften vertiefen und neue Mädels kennenlernen – und uns einfach mal selbst aus dem Alltag herausholen.</p>
-      <p class="ln-p">Kleine und große Highlights, mitten in Bannewitz: <strong>kurze Wege, vertraute Gesichter, gute Laune.</strong></p>
-      <p class="ln-p">Und noch etwas ist uns wichtig: <strong>Alle Altersgruppen sind ausdrücklich willkommen</strong> – von den jungen Bannewitzerinnen bis zu denen, die schon ein paar Partys mehr gefeiert haben. Hier feiert die ganze Gemeinde zusammen.</p>
+      <div class="ln-card">
+        <p class="ln-p">Mal ehrlich: In den Dresdner Clubs müssen wir nicht mehr unbedingt sein. Und als Mamas sind wir im Alltag oft das „Nebenbei" – zuständig für alles und alle, immer irgendwie in Bewegung.</p>
+        <p class="ln-p">Genau deshalb wollen wir in <strong>unserem eigenen Ort</strong> etwas schaffen: Abende, auf die man sich freut. Bekannte Gesichter wiedersehen, Bekanntschaften vertiefen und neue Mädels kennenlernen – und uns einfach mal selbst aus dem Alltag herausholen.</p>
+        <p class="ln-p">Kleine und große Highlights, mitten in Bannewitz: <strong>kurze Wege, vertraute Gesichter, gute Laune.</strong></p>
+        <p class="ln-p">Und noch etwas ist uns wichtig: <strong>Alle Altersgruppen sind ausdrücklich willkommen</strong> – von den jungen Bannewitzerinnen bis zu denen, die schon ein paar Partys mehr gefeiert haben. Hier feiert die ganze Gemeinde zusammen.</p>
+      </div>
     </div>
   </section>
 
@@ -246,9 +270,9 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
       <span class="ln-eyebrow"><span class="dot"></span>Feiern für den guten Zweck</span>
       <h2 id="ln-charity-h" class="ln-h2">Ein Abend, der auch etwas zurückgibt.</h2>
       <div class="ln-charity">
-        <div>
+        <div class="ln-card">
           <p class="ln-p">Von jedem verkauften Ticket gehen <strong>2 €</strong> an einen Bannewitzer Verein. <strong>immobilien-bannewitz.de verdoppelt diesen Betrag</strong> und rundet die Spende großzügig auf <strong>1.000 €</strong> auf.</p>
-          <p class="ln-p">Welcher Verein die Spende erhält, entscheidet eine <strong>Verlosung live am Abend</strong>. Vereine aus der Gemeinde Bannewitz können sich kostenlos bewerben – ganz ohne Ticketkauf.</p>
+          <p class="ln-p">Welcher Verein die Spende erhält, entscheidet eine <strong>Verlosung live am Abend</strong>. <strong>Gemeinnützige Vereine</strong> aus der Gemeinde Bannewitz können sich kostenlos bewerben – ganz ohne Ticketkauf.</p>
           <p class="ln-p" style="font-size:15px">Dein Verein möchte mitlosen? Alle Infos und die <a href="#vereine" style="color:var(--pink-deep);font-weight:600">Teilnahmebedingungen</a> stehen gleich darunter.</p>
         </div>
         <div class="ln-donate">
@@ -265,7 +289,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     <div class="in">
       <span class="ln-eyebrow"><span class="dot"></span>Für Vereine</span>
       <h2 id="ln-vereine-h" class="ln-h2">Vereine aus Bannewitz: Jetzt ums Mitlosen bewerben.</h2>
-      <p class="ln-p">Dein Verein hat seinen Sitz in der Gemeinde Bannewitz? Dann bewirb dich kostenlos um die Spende – unabhängig vom Ticketkauf. Eine kurze E-Mail genügt. So bist du dabei:</p>
+      <p class="ln-p">Dein Verein ist <strong>gemeinnützig</strong> und hat seinen Sitz in der Gemeinde Bannewitz? Dann bewirb dich kostenlos um die Spende – unabhängig vom Ticketkauf. Eine kurze E-Mail genügt. So bist du dabei:</p>
       <div class="ln-steps">
         <div class="ln-step"><span class="ln-num">1</span><div><b>E-Mail schreiben</b><br>mit Vereinsname, Sitz, Ansprechpartner:in und der geplanten Verwendung der Spende an <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20%E2%80%93%20Verein%20anmelden">info@immobilien-bannewitz.de</a>.</div></div>
         <div class="ln-step"><span class="ln-num">2</span><div><b>Frist einhalten</b><br>Die E-Mail muss bis <b>20. Januar 2027</b> bei uns eingegangen sein, damit dein Verein in den Lostopf kommt.</div></div>
@@ -278,7 +302,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
         <div class="body">
           <ul class="ln-terms">
             <li><b>Veranstalterin:</b> Janine Kreiser, finaconsil, Dresden. immobilien-bannewitz.de ist eine Marke von finaconsil.</li>
-            <li><b>Teilnahmeberechtigt:</b> Vereine mit Sitz in der Gemeinde Bannewitz. Die Teilnahme ist kostenlos und unabhängig vom Ticketkauf. Eine Anmeldung je Verein.</li>
+            <li><b>Teilnahmeberechtigt:</b> Vereine mit gemeinnützigem Zweck und Sitz in der Gemeinde Bannewitz. Die Teilnahme ist kostenlos und unabhängig vom Ticketkauf. Eine Anmeldung je Verein.</li>
             <li><b>Anmeldeschluss:</b> 20.01.2027, 23:59 Uhr. Bis dahin muss die E-Mail mit Vereinsname, Sitz, Ansprechpartner:in und geplanter Mittelverwendung bei info@immobilien-bannewitz.de eingegangen sein.</li>
             <li><b>Vertreterin vor Ort:</b> Jeder teilnehmende Verein schickt mindestens eine Vertreterin zur Veranstaltung am 23.01.2027. Für die Vertreterin ist der Eintritt frei; ein Ticketkauf ist nicht erforderlich.</li>
             <li><b>Verlosung:</b> am 23.01.2027 während der Veranstaltung. Der Gewinner-Verein wird – falls keine Vertreterin anwesend ist – zusätzlich per E-Mail benachrichtigt.</li>
