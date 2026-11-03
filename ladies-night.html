@@ -167,7 +167,8 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 .ln-band{width:100%;max-height:440px;overflow:hidden}
 .ln-band img{width:100%;height:440px;object-fit:cover;display:block}
 .ln-figure{margin:28px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px -34px rgba(60,42,24,.5)}
-.ln-figure img{width:100%;display:block}
+.ln-figure img{width:100%;display:block;max-height:560px;object-fit:cover;object-position:center 15%}
+@media (max-width:760px){.ln-figure img{max-height:460px}}
 @media (max-width:760px){.ln-band img{height:300px}}
 /* Lauftext-Band */
 .ln-ticker{background:linear-gradient(90deg,var(--pink),var(--pink-deep));overflow:hidden;white-space:nowrap}
