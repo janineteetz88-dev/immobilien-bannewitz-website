@@ -64,8 +64,9 @@
 .ln-hero{position:relative;overflow:hidden;background:#241319;
   padding:clamp(56px,8vh,96px) clamp(24px,5vw,80px) clamp(60px,9vh,96px)}
 .ln-hero::after{content:"";position:absolute;inset:0;z-index:0;
-  background:linear-gradient(180deg,rgba(22,11,16,.48) 0%,rgba(22,11,16,.60) 55%,rgba(22,11,16,.78) 100%),url('assets/images/ladies-night-hero.jpg?v=2') center 28%/cover no-repeat}
+  background:radial-gradient(135% 105% at 50% 42%,rgba(10,5,8,.66) 0%,rgba(10,5,8,.34) 52%,rgba(10,5,8,.12) 100%),linear-gradient(180deg,rgba(12,6,9,.42) 0%,rgba(12,6,9,.52) 55%,rgba(12,6,9,.72) 100%),url('assets/images/ladies-night-hero.jpg?v=2') center 28%/cover no-repeat}
 .ln-hero .in{max-width:1000px;margin:0 auto;position:relative;z-index:1;text-align:center}
+.ln-hero .in :is(.ln-ord,.ln-when,.ln-lede,.ln-note,.ln-credit-m,.breadcrumb){text-shadow:0 1px 12px rgba(0,0,0,.6)}
 /* Hero-Text hell über dem Foto */
 .ln-hero .ln-title{color:var(--pink)}
 .ln-hero .ln-title .l2{color:#fff}
@@ -87,8 +88,8 @@
 .ln-sticker .burst{width:89%;height:89%;background:var(--pink);clip-path:var(--burst);display:grid;place-items:center}
 .ln-sticker .txt{color:#fff;text-align:center;max-width:78%;line-height:1.1;font-family:Arial,Helvetica,sans-serif}
 .ln-sticker .k{display:block;font-size:clamp(9px,1.1vw,13px);font-weight:700;text-transform:uppercase;letter-spacing:.03em;opacity:.95;white-space:nowrap}
-.ln-sticker .n{display:block;font-size:clamp(16px,2.15vw,26px);font-weight:800;margin:4px 0 5px;font-family:Georgia,'Times New Roman',serif;line-height:1;white-space:nowrap}
-.ln-sticker .u{display:block;font-size:clamp(8px,1vw,12px);font-weight:700;letter-spacing:.02em;opacity:.95;line-height:1.25}
+.ln-sticker .n{display:block;font-size:clamp(16px,2.15vw,26px);font-weight:800;margin:3px 0 5px;font-family:Georgia,'Times New Roman',serif;line-height:1.02;white-space:nowrap}
+.ln-sticker .u{display:block;font-size:clamp(7px,.82vw,10px);font-weight:700;letter-spacing:.01em;opacity:.95;line-height:1.22}
 .ln-hero .ln-credit-m{display:none}
 @media (max-width:620px){.ln-sticker{display:none}.ln-hero .ln-credit-m{display:inline-flex;margin:0 0 6px}}
 .ln-kick{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
@@ -211,7 +212,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 
   <!-- ============ HERO ============ -->
   <section class="ln-hero" aria-labelledby="ln-h1">
-    <a class="ln-sticker" href="#warteliste" aria-label="Organisiert von Vicki und Janine, unterstützt von immobilien-bannewitz.de – zur Warteliste"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki &amp; Janine</span><span class="u">unterstützt von<br>immobilien-bannewitz.de</span></span></span></a>
+    <a class="ln-sticker" href="#warteliste" aria-label="Organisiert von Vicki und Janine, unterstützt von immobilien-bannewitz.de – zur Warteliste"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki &amp;<br>Janine</span><span class="u">unterstützt von<br>immobilien-bannewitz.de</span></span></span></a>
     <div class="in">
       <nav class="breadcrumb" aria-label="Brotkrumen" style="justify-content:center;display:flex"><a href="./#hero">Start</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Ladies Night</span></nav>
       <p class="ln-kick ln-credit-m"><span class="dot"></span>Organisiert von Vicki &amp; Janine · unterstützt von immobilien-bannewitz.de</p>
