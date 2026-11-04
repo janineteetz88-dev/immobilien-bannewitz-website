@@ -178,13 +178,14 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 .ln-step a{color:var(--pink-deep);font-weight:600}
 .ln-num{flex:none;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--pink-deep));color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
 @media (max-width:760px){.ln-steps{grid-template-columns:1fr}}
-.ln-band{width:100%;max-height:440px;overflow:hidden}
-.ln-band img{width:100%;height:440px;object-fit:cover;display:block}
+.ln-band{width:min(720px,91%);margin:34px auto;border-radius:16px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 26px 54px -36px rgba(60,42,24,.55)}
+.ln-band img{width:100%;height:auto;display:block}
 .ln-figure{margin:28px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px -34px rgba(60,42,24,.5);position:relative}
 .ln-figure.has-logo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,5,8,.24),rgba(10,5,8,.34))}
 .ln-figure img{width:100%;display:block;max-height:560px;object-fit:cover;object-position:center 15%}
 @media (max-width:760px){.ln-figure img{max-height:460px}}
-@media (max-width:760px){.ln-band img{height:300px}}
+@media (max-width:760px){.ln-band{width:91%;margin:26px auto}}
 /* Lauftext-Band */
 .ln-ticker{background:linear-gradient(90deg,var(--pink),var(--pink-deep));overflow:hidden;white-space:nowrap}
 .ln-ticker .track{display:inline-flex;align-items:center;animation:lnmarquee 30s linear infinite;will-change:transform}
