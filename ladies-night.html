@@ -217,6 +217,16 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
 .ln-msg{margin-top:16px;font-size:14.5px;line-height:1.55;border-radius:10px;padding:14px 16px}
 .ln-msg.ok{background:rgba(255,255,255,.16);color:#fff}
 .ln-msg.err{background:rgba(23,20,15,.28);color:#fff}
+.ln-success{margin-top:6px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.34);
+  border-radius:16px;padding:30px 24px 26px;text-align:center;box-shadow:0 24px 50px -32px rgba(0,0,0,.5)}
+.ln-success .ln-check{width:66px;height:66px;border-radius:50%;background:#fff;color:var(--pink-deep);
+  font-size:36px;font-weight:800;line-height:1;display:grid;place-items:center;margin:0 auto 16px;
+  box-shadow:0 12px 26px -10px rgba(0,0,0,.5)}
+.ln-success h3{color:#fff;font-size:clamp(22px,3.1vw,30px);margin:0 0 12px;line-height:1.15}
+.ln-success p{color:rgba(255,255,255,.95);font-size:16px;line-height:1.65;margin:0 auto 10px;max-width:460px}
+.ln-success p strong{color:#fff}
+.ln-success .mail{word-break:break-word}
+.ln-success .ln-success-sub{color:rgba(255,255,255,.82);font-size:14px;margin-bottom:0}
 .ln-alt{margin-top:18px;font-size:13px;color:rgba(255,255,255,.82);text-align:center}
 .ln-alt a{color:#fff;text-decoration:underline}
 @media (max-width:760px){.ln-charity{grid-template-columns:1fr;gap:20px}}
@@ -416,9 +426,14 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
           <span>Ja, ich möchte außerdem Einladungen zu weiteren Bannewitzer Veranstaltungen bekommen (z.&nbsp;B. Schlagernacht, Line-Dance-Abend, Kinderdisco).</span>
         </label>
         <button type="submit" class="ln-submit" id="ln-submit">Auf die Warteliste</button>
-        <div class="ln-msg ok" id="ln-ok" hidden>Geschafft – du stehst auf der Warteliste! Wir melden uns per E-Mail, sobald der Ticketverkauf startet.</div>
-        <div class="ln-msg err" id="ln-err" hidden>Das hat leider nicht geklappt. Bitte prüfe deine Angaben oder schreib uns direkt an <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20Warteliste" style="color:#fff">info@immobilien-bannewitz.de</a>.</div>
       </form>
+      <div class="ln-success" id="ln-ok" hidden role="status" aria-live="polite">
+        <div class="ln-check" aria-hidden="true">✓</div>
+        <h3>Geschafft – du bist auf der Warteliste! 🎉</h3>
+        <p>Wir haben dir gerade eine <strong>Bestätigungs-Mail</strong><span class="mail" id="ln-ok-mail"></span> geschickt. Schau bitte in dein <strong>Postfach</strong> – und falls dort nichts ist, auch kurz in den <strong>Spam-Ordner</strong>.</p>
+        <p class="ln-success-sub">Sobald der Ticketverkauf startet, melden wir uns als Erste bei dir.</p>
+      </div>
+      <div class="ln-msg err" id="ln-err" hidden>Das hat leider nicht geklappt. Bitte prüfe deine Angaben oder schreib uns direkt an <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20Warteliste" style="color:#fff">info@immobilien-bannewitz.de</a>.</div>
       <p class="ln-alt">Lieber direkt? <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20Warteliste">Nachricht schreiben</a></p>
     </div>
   </section>
@@ -480,7 +495,14 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
       body: JSON.stringify({ vorname: vnv, email: emv, consent: 'ja', events: (csEv && csEv.checked) ? 'ja' : 'nein', source: 'Ladies-Night Warteliste', website: hp ? hp.value : '' })
     }).then(function(res){ if(!res.ok) throw new Error('req'); return res.json(); })
       .then(function(data){ if(!data || !data.ok) throw new Error('resp');
-        form.reset(); okEl.hidden = false; form.hidden = true;
+        form.reset(); form.hidden = true;
+        var card = form.parentNode;
+        var h2 = document.getElementById('ln-form-h'); if(h2){ h2.hidden = true; }
+        var lede = card.querySelector('.lede'); if(lede){ lede.hidden = true; }
+        var alt = card.querySelector('.ln-alt'); if(alt){ alt.hidden = true; }
+        var mailEl = document.getElementById('ln-ok-mail'); if(mailEl && emv){ mailEl.textContent = ' an ' + emv; }
+        okEl.hidden = false;
+        try{ okEl.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){}
       })
       .catch(function(){ errEl.hidden = false; })
       .finally(function(){ btn.disabled = false; btn.textContent = 'Auf die Warteliste'; });
