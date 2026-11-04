@@ -102,20 +102,26 @@
 .ln-band--logo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,rgba(10,5,8,.30),rgba(10,5,8,.46))}
 .ln-logo-wrap--on-photo{position:absolute;inset:0;margin:0;z-index:2;align-items:center}
-.ln-logo{position:relative;display:inline-block;text-align:center;transform:rotate(-1.5deg);
-  background:linear-gradient(145deg,var(--pink),var(--pink-deep));border-radius:20px;
-  padding:clamp(20px,2.6vw,30px) clamp(40px,6vw,86px) clamp(22px,2.8vw,32px);
-  box-shadow:0 34px 72px -40px rgba(200,40,111,.6)}
-.ln-logo .ll-ord{display:block;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#ffd7e8;font-weight:600}
-.ln-logo .ll-name{display:block;margin-top:7px;font-family:'Yeseva One',Georgia,serif;color:#fff;font-size:clamp(28px,4vw,46px);line-height:1.0}
-.ln-logo .ll-sub{display:block;margin-top:13px;font-family:Arial,Helvetica,sans-serif;font-size:clamp(11px,1.2vw,14px);font-weight:700;color:#ffe1ef;letter-spacing:.3px}
-.ln-sticker.ln-sticker--corner{top:clamp(-64px,-6.2vw,-42px);right:clamp(-56px,-5.2vw,-34px);
-  width:clamp(128px,15vw,170px);height:clamp(128px,15vw,170px);transform:rotate(-10deg)}
-.ln-sticker.ln-sticker--corner:hover{transform:rotate(-10deg) scale(1.05)}
-.ln-sticker--corner .k{font-size:clamp(6px,.66vw,7.5px)}
-.ln-sticker--corner .n{font-size:clamp(10.5px,1.2vw,14.5px);margin:1px 0 2px}
+.ln-logo{position:relative;width:clamp(230px,30vw,322px);height:clamp(230px,30vw,322px);border-radius:50%;
+  background:#EDE5D7;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:0 clamp(26px,3.8vw,42px);
+  box-shadow:0 30px 60px -26px rgba(120,40,70,.55),inset 0 0 0 2px rgba(255,255,255,.65)}
+.ln-logo .ll-burst{display:block;color:var(--pink);font-size:clamp(15px,1.9vw,20px);line-height:1;margin-bottom:3px}
+.ln-logo .ll-ord{display:flex;align-items:center;justify-content:center;gap:9px;font-size:clamp(10px,1.1vw,13px);letter-spacing:.26em;text-transform:uppercase;color:var(--ink);font-weight:700}
+.ln-logo .ll-ord::before,.ln-logo .ll-ord::after{content:"";width:clamp(12px,1.8vw,20px);height:2px;background:var(--pink);border-radius:2px}
+.ln-logo .ll-name{display:block;margin-top:6px;font-family:'Yeseva One',Georgia,serif;line-height:1.0;font-size:clamp(25px,3.5vw,41px)}
+.ln-logo .ll-name .l-dark{display:block;color:var(--ink)}
+.ln-logo .ll-name .l-pink{display:block;color:var(--pink)}
+.ln-logo .ll-div{display:block;width:32px;height:2px;background:var(--pink);border-radius:2px;margin:9px auto}
+.ln-logo .ll-sub{display:block;font-family:Arial,Helvetica,sans-serif;font-size:clamp(8px,.88vw,10.5px);font-weight:700;color:var(--ink);letter-spacing:.1px;white-space:nowrap}
+.ln-sticker.ln-sticker--corner{top:clamp(-48px,-4.6vw,-30px);right:clamp(-46px,-4.4vw,-28px);
+  width:clamp(116px,13.5vw,150px);height:clamp(116px,13.5vw,150px);transform:rotate(7deg);background:#17140F}
+.ln-sticker.ln-sticker--corner:hover{transform:rotate(7deg) scale(1.05)}
+.ln-sticker--corner .burst{background:#fff}
+.ln-sticker--corner .k{font-size:clamp(6px,.66vw,7.5px);color:var(--pink-deep)}
+.ln-sticker--corner .n{font-size:clamp(10.5px,1.2vw,14.5px);margin:1px 0 2px;color:var(--ink)}
 .ln-sticker--corner .u{font-size:clamp(5px,.54vw,6.5px);letter-spacing:0}
-@media (max-width:620px){.ln-logo{transform:rotate(-1.5deg) scale(.9)}}
+@media (max-width:620px){.ln-logo{width:208px;height:208px;padding:0 24px}}
 .ln-hero .ln-credit-m{display:none}
 @media (max-width:620px){.ln-sticker{display:none}.ln-hero .ln-credit-m{display:inline-flex;margin:0 0 6px}}
 .ln-kick{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
@@ -280,8 +286,10 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
       <figure class="ln-figure has-logo"><picture><source srcset="assets/images/ladies-night-talk.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-talk.jpg?v=2" alt="Drei Frauen unterhalten sich lachend bei einem Glas Sekt" width="1024" height="688" loading="lazy" decoding="async"></picture>
         <div class="ln-logo-wrap ln-logo-wrap--on-photo">
           <div class="ln-logo">
+            <span class="ll-burst">✳</span>
             <span class="ll-ord">Die 1.</span>
-            <span class="ll-name">Bannewitzer<br>Ladies Night</span>
+            <span class="ll-name"><span class="l-dark">Bannewitzer</span><span class="l-pink">Ladies Night</span></span>
+            <span class="ll-div"></span>
             <span class="ll-sub">unterstützt von immobilien-bannewitz.de</span>
             <a class="ln-sticker ln-sticker--corner" href="./" aria-label="Organisiert von Vicki, Aline und Janine – zur Startseite immobilien-bannewitz.de"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki,<br>Aline &amp;<br>Janine</span></span></span></a>
           </div>
@@ -372,13 +380,28 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
   <div class="ln-band ln-band--logo"><picture><source srcset="assets/images/ladies-night-dance.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-dance.jpg?v=2" alt="Zwei Frauen tanzen und lachen ausgelassen auf einer Party mit Lichterketten" width="1024" height="688" loading="lazy" decoding="async"></picture>
     <div class="ln-logo-wrap ln-logo-wrap--on-photo">
       <div class="ln-logo">
+        <span class="ll-burst">✳</span>
         <span class="ll-ord">Die 1.</span>
-        <span class="ll-name">Bannewitzer<br>Ladies Night</span>
+        <span class="ll-name"><span class="l-dark">Bannewitzer</span><span class="l-pink">Ladies Night</span></span>
+        <span class="ll-div"></span>
         <span class="ll-sub">unterstützt von immobilien-bannewitz.de</span>
         <a class="ln-sticker ln-sticker--corner" href="./" aria-label="Organisiert von Vicki, Aline und Janine – zur Startseite immobilien-bannewitz.de"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki,<br>Aline &amp;<br>Janine</span></span></span></a>
       </div>
     </div>
   </div>
+
+  <!-- ============ UNTERNEHMERINNEN / SACHSPENDEN ============ -->
+  <section class="ln-sec alt" aria-labelledby="ln-sponsor-h">
+    <div class="in">
+      <span class="ln-eyebrow"><span class="dot"></span>Für Unternehmerinnen aus der Region</span>
+      <h2 id="ln-sponsor-h" class="ln-h2">Mach mit – und dein Unternehmen gleich sichtbar.</h2>
+      <div class="ln-card">
+        <p class="ln-p">Du bist <strong>Unternehmerin aus Bannewitz und Umgebung</strong> und möchtest zum Erfolg unseres Abends beitragen – mit einer <strong>Sachspende</strong>, einem kleinen Give-away für unsere Gäste oder auf andere Weise? Dann bist du bei uns goldrichtig.</p>
+        <p class="ln-p">So machst du <strong>dein Unternehmen bei vielen Frauen aus der Region bekannt</strong> und unterstützt gleichzeitig einen Abend, der Bannewitz zusammenbringt. Schreib uns einfach kurz, was du beitragen möchtest – wir melden uns.</p>
+      </div>
+      <a href="mailto:info@immobilien-bannewitz.de?subject=Ladies%20Night%20%E2%80%93%20Unternehmerin%20unterst%C3%BCtzen" class="btn" style="margin-top:4px">Als Unternehmerin unterstützen</a>
+    </div>
+  </section>
 
   <!-- ============ WARTELISTE ============ -->
   <section class="ln-sec ln-form-sec" id="warteliste" aria-labelledby="ln-form-h">
