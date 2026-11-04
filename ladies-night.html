@@ -122,6 +122,13 @@
 .ln-sticker--corner .n{font-size:clamp(10.5px,1.2vw,14.5px);margin:1px 0 2px;color:var(--ink)}
 .ln-sticker--corner .u{font-size:clamp(5px,.54vw,6.5px);letter-spacing:0}
 @media (max-width:620px){.ln-logo{width:208px;height:208px;padding:0 24px}}
+/* Echtes Event-Logo (Bilddatei) im Hero */
+.ln-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ln-logo-img-wrap{display:flex;justify-content:center;margin:clamp(10px,2.5vw,22px) 0 clamp(16px,2.6vw,26px)}
+.ln-logo-img{width:min(380px,80vw);height:auto;border-radius:22px;
+  box-shadow:0 34px 70px -26px rgba(0,0,0,.62),0 0 0 1px rgba(255,255,255,.1)}
+.ln-hero .ln-place-note{margin:6px auto 0;font-size:14px;color:rgba(255,255,255,.82);text-shadow:0 1px 12px rgba(0,0,0,.6)}
+@media (max-width:620px){.ln-hero .ln-place-note{display:none}}
 .ln-hero .ln-credit-m{display:none}
 @media (max-width:620px){.ln-sticker{display:none}.ln-hero .ln-credit-m{display:inline-flex;margin:0 0 4px;font-size:10.5px;letter-spacing:.12em;line-height:1.5}}
 .ln-kick{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
@@ -248,12 +255,16 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
   <section class="ln-hero" aria-labelledby="ln-h1">
     <div class="in">
       <nav class="breadcrumb" aria-label="Brotkrumen" style="justify-content:center;display:flex"><a href="./#hero">Start</a><span class="sep" aria-hidden="true">›</span><span aria-current="page">Ladies Night</span></nav>
-      <p class="ln-kick ln-credit-m"><span class="dot"></span>Organisiert von Vicki, Aline &amp; Janine · unterstützt von immobilien-bannewitz.de</p>
-      <div class="ln-ord">Die 1.</div>
-      <h1 id="ln-h1" class="ln-title">Bannewitzer<span class="l2">Ladies Night</span></h1>
+      <h1 id="ln-h1" class="ln-sr">1. Bannewitzer Ladies Night – Samstag, 23. Januar 2027 in Bannewitz</h1>
+      <div class="ln-logo-img-wrap">
+        <picture>
+          <source srcset="assets/images/ladies-night-logo.webp?v=1" type="image/webp">
+          <img class="ln-logo-img" src="assets/images/ladies-night-logo.png?v=1" width="820" height="820" fetchpriority="high" alt="Die 1. Bannewitzer Ladies Night – organisiert von Vicki, Aline und Janine, unterstützt von immobilien-bannewitz.de">
+        </picture>
+      </div>
       <p class="ln-when">Samstag, 23. Januar 2027 · 20–24 Uhr · in Bannewitz</p>
-      <p style="margin:8px auto 0;font-size:14px;color:rgba(255,255,255,.8)">Der genaue Veranstaltungsort wird noch bekannt gegeben.</p>
-      <p class="ln-lede">Ein Abend nur für Bannewitzer Frauen: tanzen, quatschen, den Alltag vergessen. Schnell sein lohnt sich – die Warteliste füllt sich bereits.</p>
+      <p class="ln-place-note">Der genaue Veranstaltungsort wird noch bekannt gegeben.</p>
+      <p class="ln-lede">Ein Abend nur für Bannewitzer Frauen – tanzen, quatschen, Alltag vergessen.</p>
       <div class="ln-meta">
         <span class="ln-chip"><b>14,99 €</b> pro Ticket</span>
         <span class="ln-chip">nur <b>200 Tickets</b></span>
@@ -283,18 +294,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
         <p class="ln-p">Beim Bäcker, zum Elternabend, im Supermarkt: Man sieht sich, grüßt sich, und weiter geht's. Die <strong>1. Bannewitzer Ladies Night</strong> ist der Abend, an dem wir endlich zusammen feiern – bei guter Musik, einem Glas in der Hand und ohne Blick auf die Uhr.</p>
         <p class="ln-p">Ein Abend zum Tanzen, Lachen und Kennenlernen. Nur für Frauen, mitten in Bannewitz. Lass dir den Alltag für ein paar Stunden aus dem Kopf tanzen.</p>
       </div>
-      <figure class="ln-figure has-logo"><picture><source srcset="assets/images/ladies-night-talk.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-talk.jpg?v=2" alt="Drei Frauen unterhalten sich lachend bei einem Glas Sekt" width="1024" height="688" loading="lazy" decoding="async"></picture>
-        <div class="ln-logo-wrap ln-logo-wrap--on-photo">
-          <div class="ln-logo">
-            <span class="ll-burst">✳</span>
-            <span class="ll-ord">Die 1.</span>
-            <span class="ll-name"><span class="l-dark">Bannewitzer</span><span class="l-pink">Ladies Night</span></span>
-            <span class="ll-div"></span>
-            <span class="ll-sub">unterstützt von immobilien-bannewitz.de</span>
-            <a class="ln-sticker ln-sticker--corner" href="./" aria-label="Organisiert von Vicki, Aline und Janine – zur Startseite immobilien-bannewitz.de"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki,<br>Aline &amp;<br>Janine</span></span></span></a>
-          </div>
-        </div>
-      </figure>
+      <figure class="ln-figure"><picture><source srcset="assets/images/ladies-night-talk.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-talk.jpg?v=2" alt="Drei Frauen unterhalten sich lachend bei einem Glas Sekt" width="1024" height="688" loading="lazy" decoding="async"></picture></figure>
     </div>
   </section>
 
@@ -377,18 +377,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
     </div>
   </section>
 
-  <div class="ln-band ln-band--logo"><picture><source srcset="assets/images/ladies-night-dance.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-dance.jpg?v=2" alt="Zwei Frauen tanzen und lachen ausgelassen auf einer Party mit Lichterketten" width="1024" height="688" loading="lazy" decoding="async"></picture>
-    <div class="ln-logo-wrap ln-logo-wrap--on-photo">
-      <div class="ln-logo">
-        <span class="ll-burst">✳</span>
-        <span class="ll-ord">Die 1.</span>
-        <span class="ll-name"><span class="l-dark">Bannewitzer</span><span class="l-pink">Ladies Night</span></span>
-        <span class="ll-div"></span>
-        <span class="ll-sub">unterstützt von immobilien-bannewitz.de</span>
-        <a class="ln-sticker ln-sticker--corner" href="./" aria-label="Organisiert von Vicki, Aline und Janine – zur Startseite immobilien-bannewitz.de"><span class="burst"><span class="txt"><span class="k">Organisiert von</span><span class="n">Vicki,<br>Aline &amp;<br>Janine</span></span></span></a>
-      </div>
-    </div>
-  </div>
+  <div class="ln-band"><picture><source srcset="assets/images/ladies-night-dance.webp?v=2" type="image/webp"><img src="assets/images/ladies-night-dance.jpg?v=2" alt="Zwei Frauen tanzen und lachen ausgelassen auf einer Party mit Lichterketten" width="1024" height="688" loading="lazy" decoding="async"></picture></div>
 
   <!-- ============ UNTERNEHMERINNEN / SACHSPENDEN ============ -->
   <section class="ln-sec alt" aria-labelledby="ln-sponsor-h">
