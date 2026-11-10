@@ -202,6 +202,11 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
   border-radius:18px;padding:clamp(28px,5vw,44px);backdrop-filter:blur(4px)}
 .ln-form-card h2{color:#fff;font-size:clamp(26px,3.6vw,40px);margin:0 0 8px}
 .ln-form-card .lede{color:rgba(255,255,255,.9);font-weight:300;font-size:16px;line-height:1.6;margin:0 0 24px}
+.ln-count{margin:0 0 22px;text-align:left}
+.ln-count-bar{height:12px;border-radius:30px;background:rgba(255,255,255,.22);overflow:hidden}
+.ln-count-bar span{display:block;height:100%;width:0;border-radius:30px;background:#fff;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.ln-count-txt{margin:10px 0 0;color:#fff;font-size:15px;font-weight:600}
+.ln-count-txt strong{font-weight:800;font-size:17px}
 .ln-field{margin-bottom:16px;text-align:left}
 .ln-field label{display:block;font-size:13px;letter-spacing:.04em;font-weight:600;margin-bottom:7px;color:#fff}
 .ln-field input[type=text],.ln-field input[type=email]{width:100%;padding:14px 16px;border-radius:9px;border:1px solid rgba(255,255,255,.3);
@@ -407,6 +412,10 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
   <section class="ln-sec ln-form-sec" id="warteliste" aria-labelledby="ln-form-h">
     <div class="ln-form-card">
       <h2 id="ln-form-h">Schaffen wir 200 Ladies?</h2>
+      <div class="ln-count" id="ln-count" hidden aria-live="polite">
+        <div class="ln-count-bar"><span id="ln-count-fill"></span></div>
+        <p class="ln-count-txt"><strong id="ln-count-n">0</strong> von 200 schon auf der Warteliste</p>
+      </div>
       <p class="lede"><strong>Sei dabei.</strong> Nur 200 Tickets – und die Plätze sind begrenzt. Trag dich kostenlos auf die Warteliste ein und hilf mit, dass Bannewitz voll wird: Du erfährst als Erste, sobald die Tickets starten.</p>
       <form id="lnForm" novalidate>
         <div class="ln-hp" aria-hidden="true"><label>Bitte leer lassen<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -500,6 +509,7 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
         var card = form.parentNode;
         var h2 = document.getElementById('ln-form-h'); if(h2){ h2.hidden = true; }
         var lede = card.querySelector('.lede'); if(lede){ lede.hidden = true; }
+        var cnt = document.getElementById('ln-count'); if(cnt){ cnt.hidden = true; }
         var alt = card.querySelector('.ln-alt'); if(alt){ alt.hidden = true; }
         var mailEl = document.getElementById('ln-ok-mail'); if(mailEl && emv){ mailEl.textContent = ' an ' + emv; }
         okEl.hidden = false;
@@ -508,6 +518,27 @@ details.ln-acc .body strong{color:var(--ink);font-weight:600}
       .catch(function(){ errEl.hidden = false; })
       .finally(function(){ btn.disabled = false; btn.textContent = 'Auf die Warteliste'; });
   });
+})();
+
+// Live-Zähler: aktuelle Anzahl auf der Warteliste anzeigen
+(function(){
+  var COUNT_URL = 'https://cbqakqnfrjbdcvpsqmir.supabase.co/functions/v1/ladies-night-count';
+  var GOAL = 200;
+  var box = document.getElementById('ln-count');
+  var fill = document.getElementById('ln-count-fill');
+  var num = document.getElementById('ln-count-n');
+  if(!box || !fill || !num) return;
+  fetch(COUNT_URL, { headers:{ 'Accept':'application/json' } })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if(!d || !d.ok || typeof d.count !== 'number') return;
+      var c = Math.max(0, d.count);
+      num.textContent = c;
+      box.hidden = false;
+      var pct = Math.min(100, Math.round(c / GOAL * 100));
+      requestAnimationFrame(function(){ fill.style.width = Math.max(pct, 3) + '%'; });
+    })
+    .catch(function(){ /* still: Zähler bleibt einfach verborgen */ });
 })();
 </script>
 
