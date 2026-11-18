@@ -117,6 +117,9 @@ button{font-family:var(--ff); cursor:pointer}
 .nav-brand{display:flex; flex-direction:column; gap:1px; font-family:var(--ff); font-weight:400; font-size:19px; line-height:1.15; letter-spacing:.3px; color:#fff; transition:color .5s ease}
 .site-nav.solid .nav-brand{color:var(--ink)}
 .nav-brand-sub{font-size:10px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:inherit; opacity:.7}
+.nav-brand-link{display:flex; flex-direction:column; gap:1px; color:inherit; text-decoration:none}
+.nav-brand-tel{display:inline-block; margin-top:3px; color:inherit; text-decoration:none; font-size:13px; font-weight:700; letter-spacing:.4px; white-space:nowrap; opacity:.92}
+.nav-brand-tel:hover{opacity:.7}
 .nav-links{display:flex; align-items:center; gap:clamp(12px,1.6vw,30px); font-size:13px; letter-spacing:1.5px; text-transform:uppercase; list-style:none; margin:0; padding:0}
 .nav-links a{color:#fff; transition:color .5s ease, opacity .3s ease; white-space:nowrap}
 .nav-brand{flex-shrink:0}
